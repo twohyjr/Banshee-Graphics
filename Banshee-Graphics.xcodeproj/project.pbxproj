@@ -13,10 +13,14 @@
 		BD8536E22028BC760061175E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8536E02028BC760061175E /* Main.storyboard */; };
 		BD8536EE2028BC760061175E /* Banshee_GraphicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536ED2028BC760061175E /* Banshee_GraphicsTests.swift */; };
 		BD8536F92028BC760061175E /* Banshee_GraphicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536F82028BC760061175E /* Banshee_GraphicsUITests.swift */; };
-		BD8537082028C3D70061175E /* BGPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537072028C3D70061175E /* BGPreferences.swift */; };
-		BD85370B2028C4410061175E /* BGRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85370A2028C4410061175E /* BGRenderer.swift */; };
-		BD8537172028C6F60061175E /* BGGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537162028C6F60061175E /* BGGameView.swift */; };
-		BD8537192028C78F0061175E /* BGEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537182028C78F0061175E /* BGEngine.swift */; };
+		BD8537082028C3D70061175E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537072028C3D70061175E /* Preferences.swift */; };
+		BD85370B2028C4410061175E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85370A2028C4410061175E /* Renderer.swift */; };
+		BD8537172028C6F60061175E /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537162028C6F60061175E /* GameView.swift */; };
+		BD8537192028C78F0061175E /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537182028C78F0061175E /* Engine.swift */; };
+		BD8537242028D63A0061175E /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537232028D63A0061175E /* RenderPipelineStateLibrary.swift */; };
+		BD8537262028D7F60061175E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537252028D7F60061175E /* Types.swift */; };
+		BD8537282028D9CF0061175E /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537272028D9CF0061175E /* Scene.swift */; };
+		BD85372A2028DC420061175E /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BD8537292028DC420061175E /* BasicShaders.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +54,14 @@
 		BD8536F42028BC760061175E /* Banshee-GraphicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Banshee-GraphicsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8536F82028BC760061175E /* Banshee_GraphicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banshee_GraphicsUITests.swift; sourceTree = "<group>"; };
 		BD8536FA2028BC760061175E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD8537072028C3D70061175E /* BGPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPreferences.swift; sourceTree = "<group>"; };
-		BD85370A2028C4410061175E /* BGRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGRenderer.swift; sourceTree = "<group>"; };
-		BD8537162028C6F60061175E /* BGGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGameView.swift; sourceTree = "<group>"; };
-		BD8537182028C78F0061175E /* BGEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGEngine.swift; sourceTree = "<group>"; };
+		BD8537072028C3D70061175E /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		BD85370A2028C4410061175E /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		BD8537162028C6F60061175E /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		BD8537182028C78F0061175E /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		BD8537232028D63A0061175E /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPipelineStateLibrary.swift; sourceTree = "<group>"; };
+		BD8537252028D7F60061175E /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		BD8537272028D9CF0061175E /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		BD8537292028DC420061175E /* BasicShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +112,15 @@
 		BD8536D62028BC760061175E /* Banshee-Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				BD8537092028C42D0061175E /* Window */,
 				BD8537062028BCE90061175E /* Other FIles */,
-				BD8537072028C3D70061175E /* BGPreferences.swift */,
-				BD85370A2028C4410061175E /* BGRenderer.swift */,
-				BD8537182028C78F0061175E /* BGEngine.swift */,
+				BD8537222028D6280061175E /* Libraries */,
+				BD8537092028C42D0061175E /* Window */,
+				BD8537252028D7F60061175E /* Types.swift */,
+				BD8537072028C3D70061175E /* Preferences.swift */,
+				BD85370A2028C4410061175E /* Renderer.swift */,
+				BD8537182028C78F0061175E /* Engine.swift */,
+				BD8537272028D9CF0061175E /* Scene.swift */,
+				BD8537292028DC420061175E /* BasicShaders.metal */,
 			);
 			path = "Banshee-Graphics";
 			sourceTree = "<group>";
@@ -147,9 +159,18 @@
 			isa = PBXGroup;
 			children = (
 				BD8536E02028BC760061175E /* Main.storyboard */,
-				BD8537162028C6F60061175E /* BGGameView.swift */,
+				BD8537162028C6F60061175E /* GameView.swift */,
 			);
 			path = Window;
+			sourceTree = "<group>";
+		};
+		BD8537222028D6280061175E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BD8537232028D63A0061175E /* RenderPipelineStateLibrary.swift */,
+			);
+			name = Libraries;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,11 +307,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
-				BD8537082028C3D70061175E /* BGPreferences.swift in Sources */,
-				BD8537172028C6F60061175E /* BGGameView.swift in Sources */,
-				BD85370B2028C4410061175E /* BGRenderer.swift in Sources */,
+				BD8537082028C3D70061175E /* Preferences.swift in Sources */,
+				BD8537172028C6F60061175E /* GameView.swift in Sources */,
+				BD8537262028D7F60061175E /* Types.swift in Sources */,
+				BD8537242028D63A0061175E /* RenderPipelineStateLibrary.swift in Sources */,
+				BD85372A2028DC420061175E /* BasicShaders.metal in Sources */,
+				BD85370B2028C4410061175E /* Renderer.swift in Sources */,
 				BD8536D82028BC760061175E /* AppDelegate.swift in Sources */,
-				BD8537192028C78F0061175E /* BGEngine.swift in Sources */,
+				BD8537192028C78F0061175E /* Engine.swift in Sources */,
+				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

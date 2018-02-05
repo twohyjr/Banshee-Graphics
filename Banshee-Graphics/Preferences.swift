@@ -1,6 +1,6 @@
 import MetalKit
 
-class BGPreferences{
+class Preferences{
     
     //Pixel / Depth Formats
     public static var MainPixelFormat: MTLPixelFormat = MTLPixelFormat.bgra8Unorm

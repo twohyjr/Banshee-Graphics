@@ -1,17 +1,17 @@
 import MetalKit
 
-class BGGameView: MTKView {
+class GameView: MTKView {
 
     required init(coder: NSCoder) {
         super.init(coder: coder)
 
         self.device = MTLCreateSystemDefaultDevice()
         
-        BGEngine.startup(device: device!, mtkView: self)
+        Engine.startup(device: device!, mtkView: self)
         
-        self.colorPixelFormat = BGPreferences.MainPixelFormat
+        self.colorPixelFormat = Preferences.MainPixelFormat
         
-        self.delegate = BGEngine.renderer
+        self.delegate = Engine.renderer
         
     }
     
