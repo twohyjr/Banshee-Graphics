@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		BD8536D82028BC760061175E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536D72028BC760061175E /* AppDelegate.swift */; };
-		BD8536DA2028BC760061175E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536D92028BC760061175E /* ViewController.swift */; };
 		BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8536DB2028BC760061175E /* Banshee_Graphics.xcdatamodeld */; };
 		BD8536DF2028BC760061175E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8536DE2028BC760061175E /* Assets.xcassets */; };
 		BD8536E22028BC760061175E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8536E02028BC760061175E /* Main.storyboard */; };
 		BD8536EE2028BC760061175E /* Banshee_GraphicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536ED2028BC760061175E /* Banshee_GraphicsTests.swift */; };
 		BD8536F92028BC760061175E /* Banshee_GraphicsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536F82028BC760061175E /* Banshee_GraphicsUITests.swift */; };
+		BD8537082028C3D70061175E /* BGPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537072028C3D70061175E /* BGPreferences.swift */; };
+		BD85370B2028C4410061175E /* BGRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85370A2028C4410061175E /* BGRenderer.swift */; };
+		BD8537172028C6F60061175E /* BGGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537162028C6F60061175E /* BGGameView.swift */; };
+		BD8537192028C78F0061175E /* BGEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537182028C78F0061175E /* BGEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		BD8536D42028BC760061175E /* Banshee-Graphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banshee-Graphics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8536D72028BC760061175E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD8536D92028BC760061175E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BD8536DC2028BC760061175E /* Banshee_Graphics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Banshee_Graphics.xcdatamodel; sourceTree = "<group>"; };
 		BD8536DE2028BC760061175E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD8536E12028BC760061175E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,10 @@
 		BD8536F42028BC760061175E /* Banshee-GraphicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Banshee-GraphicsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8536F82028BC760061175E /* Banshee_GraphicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banshee_GraphicsUITests.swift; sourceTree = "<group>"; };
 		BD8536FA2028BC760061175E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD8537072028C3D70061175E /* BGPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGPreferences.swift; sourceTree = "<group>"; };
+		BD85370A2028C4410061175E /* BGRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGRenderer.swift; sourceTree = "<group>"; };
+		BD8537162028C6F60061175E /* BGGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGGameView.swift; sourceTree = "<group>"; };
+		BD8537182028C78F0061175E /* BGEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,13 +104,11 @@
 		BD8536D62028BC760061175E /* Banshee-Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				BD8536D72028BC760061175E /* AppDelegate.swift */,
-				BD8536D92028BC760061175E /* ViewController.swift */,
-				BD8536DE2028BC760061175E /* Assets.xcassets */,
-				BD8536E02028BC760061175E /* Main.storyboard */,
-				BD8536E32028BC760061175E /* Info.plist */,
-				BD8536E42028BC760061175E /* Banshee_Graphics.entitlements */,
-				BD8536DB2028BC760061175E /* Banshee_Graphics.xcdatamodeld */,
+				BD8537092028C42D0061175E /* Window */,
+				BD8537062028BCE90061175E /* Other FIles */,
+				BD8537072028C3D70061175E /* BGPreferences.swift */,
+				BD85370A2028C4410061175E /* BGRenderer.swift */,
+				BD8537182028C78F0061175E /* BGEngine.swift */,
 			);
 			path = "Banshee-Graphics";
 			sourceTree = "<group>";
@@ -125,6 +129,27 @@
 				BD8536FA2028BC760061175E /* Info.plist */,
 			);
 			path = "Banshee-GraphicsUITests";
+			sourceTree = "<group>";
+		};
+		BD8537062028BCE90061175E /* Other FIles */ = {
+			isa = PBXGroup;
+			children = (
+				BD8536D72028BC760061175E /* AppDelegate.swift */,
+				BD8536DE2028BC760061175E /* Assets.xcassets */,
+				BD8536E32028BC760061175E /* Info.plist */,
+				BD8536E42028BC760061175E /* Banshee_Graphics.entitlements */,
+				BD8536DB2028BC760061175E /* Banshee_Graphics.xcdatamodeld */,
+			);
+			path = "Other FIles";
+			sourceTree = "<group>";
+		};
+		BD8537092028C42D0061175E /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				BD8536E02028BC760061175E /* Main.storyboard */,
+				BD8537162028C6F60061175E /* BGGameView.swift */,
+			);
+			path = Window;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,8 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
-				BD8536DA2028BC760061175E /* ViewController.swift in Sources */,
+				BD8537082028C3D70061175E /* BGPreferences.swift in Sources */,
+				BD8537172028C6F60061175E /* BGGameView.swift in Sources */,
+				BD85370B2028C4410061175E /* BGRenderer.swift in Sources */,
 				BD8536D82028BC760061175E /* AppDelegate.swift in Sources */,
+				BD8537192028C78F0061175E /* BGEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +447,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Banshee-Graphics/Banshee_Graphics.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Banshee-Graphics/Other Files/Banshee_Graphics.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9QQ2JZFGTQ;
-				INFOPLIST_FILE = "Banshee-Graphics/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Banshee-Graphics/Other FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flophouse-Atrocities.Banshee-Graphics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,11 +463,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Banshee-Graphics/Banshee_Graphics.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Banshee-Graphics/Other Files/Banshee_Graphics.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9QQ2JZFGTQ;
-				INFOPLIST_FILE = "Banshee-Graphics/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Banshee-Graphics/Other FIles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flophouse-Atrocities.Banshee-Graphics";
 				PRODUCT_NAME = "$(TARGET_NAME)";
