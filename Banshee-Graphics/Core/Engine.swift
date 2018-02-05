@@ -16,7 +16,12 @@ class Engine {
         self.library = device.makeDefaultLibrary()
         self.renderer = Renderer()
         
+        VertexDescriptorLibrary.initialize()
+        
+        ShaderFunctionLibrary.initialize()
+        
         RenderPipelineStateLibrary.initialize()
+        
     }
     
 }
