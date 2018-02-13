@@ -26,6 +26,7 @@
 		BD8537452028EF190061175E /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537422028EF190061175E /* Engine.swift */; };
 		BD8537462028EF190061175E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537432028EF190061175E /* Types.swift */; };
 		BD8537472028EF190061175E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537442028EF190061175E /* Preferences.swift */; };
+		BD853749202901C50061175E /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD853748202901C50061175E /* Renderable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		BD8537422028EF190061175E /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Engine.swift; path = "Banshee-Graphics/Core/Engine.swift"; sourceTree = SOURCE_ROOT; };
 		BD8537432028EF190061175E /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = "Banshee-Graphics/Core/Types.swift"; sourceTree = SOURCE_ROOT; };
 		BD8537442028EF190061175E /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = "Banshee-Graphics/Core/Preferences.swift"; sourceTree = SOURCE_ROOT; };
+		BD853748202901C50061175E /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8537332028EACB0061175E /* Node.swift */,
+				BD85374A2029039C0061175E /* Protocols */,
 				BD8537302028EA550061175E /* Scenes */,
 				BD8537372028EB240061175E /* Primitives */,
 			);
@@ -228,6 +231,14 @@
 				BD8537382028EDA20061175E /* Triangle.swift */,
 			);
 			path = Primitives;
+			sourceTree = "<group>";
+		};
+		BD85374A2029039C0061175E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BD853748202901C50061175E /* Renderable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +385,7 @@
 				BD8536D82028BC760061175E /* AppDelegate.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
+				BD853749202901C50061175E /* Renderable.swift in Sources */,
 				BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */,
 				BD8537452028EF190061175E /* Engine.swift in Sources */,
 				BD85373F2028EF0A0061175E /* RenderPipelineStateLibrary.swift in Sources */,
