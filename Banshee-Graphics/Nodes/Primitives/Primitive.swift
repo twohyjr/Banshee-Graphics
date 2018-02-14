@@ -36,6 +36,10 @@ extension Primitive: Renderable{
     }
 
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        if(texture != nil){
+            renderCommandEncoder.setFragmentSamplerState(SamplerStateLibrary.samplerState(.BASIC), index: 0)
+            renderCommandEncoder.setFragmentTexture(texture, index: 0)
+        }
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)

@@ -42,8 +42,10 @@ vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]]){
     return vOut;
 }
 
-fragment half4 textured_fragment_shader(const VertexOut vIn [[ stage_in ]]){
-    float4 color = vIn.color;
+fragment half4 textured_fragment_shader(const VertexOut vIn [[ stage_in ]],
+                                        sampler sampler2d [[ sampler(0) ]],
+                                        texture2d<float> texture [[ texture(0) ]]){
+    float4 color = texture.sample(sampler2d, vIn.textureCoordinate);
     return half4(color.r, color.g, color.b, color.a);
 }
 

@@ -13,7 +13,7 @@ extension Texturable{
             let url = Bundle.main.url(forResource: textureName, withExtension: nil)
             
             //Put options on the image here
-            let originOption = [MTKTextureLoader.Option.origin:MTKTextureLoader.Origin.bottomLeft]
+            let originOption = [MTKTextureLoader.Option.origin:MTKTextureLoader.Origin.topLeft]
             
             do{
                 texture = try textureLoader.newTexture(URL: url!, options: originOption)

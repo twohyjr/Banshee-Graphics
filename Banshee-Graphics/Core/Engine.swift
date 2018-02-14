@@ -20,6 +20,8 @@ class Engine {
         
         ShaderFunctionLibrary.initialize()
         
+        SamplerStateLibrary.initialize()
+        
         RenderPipelineStateLibrary.initialize()
         
     }

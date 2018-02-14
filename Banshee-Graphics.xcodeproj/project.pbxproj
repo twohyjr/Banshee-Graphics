@@ -31,6 +31,7 @@
 		BD99A2412034BB8500E18569 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2402034BB8500E18569 /* String_Extension.swift */; };
 		BD99A2432034BE4C00E18569 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2422034BE4C00E18569 /* Quad.swift */; };
 		BD99A2472034C07900E18569 /* colors.png in Resources */ = {isa = PBXBuildFile; fileRef = BD99A2462034C07900E18569 /* colors.png */; };
+		BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		BD99A2402034BB8500E18569 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String_Extension.swift; path = "Banshee-Graphics/Core/Extensions/String_Extension.swift"; sourceTree = SOURCE_ROOT; };
 		BD99A2422034BE4C00E18569 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
 		BD99A2462034C07900E18569 /* colors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colors.png; sourceTree = "<group>"; };
+		BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerStateLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 				BD85373C2028EF0A0061175E /* RenderPipelineStateLibrary.swift */,
 				BD85373D2028EF0A0061175E /* ShaderFunctionLibrary.swift */,
 				BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */,
+				BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			files = (
 				BD8537412028EF0A0061175E /* VertexDescriptorLibrary.swift in Sources */,
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
+				BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */,
 				BD8537462028EF190061175E /* Types.swift in Sources */,
 				BD8537172028C6F60061175E /* GameView.swift in Sources */,
 				BD99A23F2034BB6200E18569 /* BasicShaders.metal in Sources */,
