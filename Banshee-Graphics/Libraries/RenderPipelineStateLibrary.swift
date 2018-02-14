@@ -14,7 +14,7 @@ class RenderPipelineStateLibrary{
     
     private static func setupAllRenderPipelineStates(){
 
-        renderPipelineStates.updateValue(Basic_RenderPipelineState(), forKey: .BASIC)
+        renderPipelineStates.updateValue(Basic_RenderPipelineState(), forKey: .BASIC) 
         
     }
     
