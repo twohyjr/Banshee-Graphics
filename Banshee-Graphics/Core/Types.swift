@@ -18,6 +18,7 @@ extension sizeable{
 struct Vertex: sizeable {
     var position: float3
     var color: float4
+    var textureCoordinate: float2
 }
 
 struct ModelConstants: sizeable{

@@ -2,9 +2,6 @@ import MetalKit
 
 class Renderer: NSObject{
     var scene: Scene = Scene()
-    
-    
-    
 }
 
 extension Renderer: MTKViewDelegate {

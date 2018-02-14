@@ -8,7 +8,7 @@ class Scene : Node{
     }
     
     func buildScene() {
-        addChild(Triangle())
+        addChild(Quad(textureName: "colors.png"))
     }
     
     private func updateScene(){

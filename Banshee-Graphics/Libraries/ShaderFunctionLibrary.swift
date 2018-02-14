@@ -3,9 +3,11 @@ import MetalKit
 enum ShaderFunctionTypes: String{
     //Vertex Shader Types
     case Basic_Vertex = "basic_vertex_shader"
+    case Textured_Vertex = "textured_vertex_shader"
     
     //Fragment Shader Types
     case Basic_Fragment = "basic_fragment_shader"
+    case Textured_Fragment = "textured_fragment_shader"
 }
 
 class ShaderFunctionLibrary {
@@ -22,11 +24,17 @@ class ShaderFunctionLibrary {
     }
     
     private static func setUpVertexShaders(){
-        shaderFunctions.updateValue(ShaderFunction(.Basic_Vertex), forKey: .Basic_Vertex)
+        addShader(shaderType: .Basic_Vertex)
+        addShader(shaderType: .Textured_Vertex)
     }
     
     private static func setUpFragmentShaders(){
-         shaderFunctions.updateValue(ShaderFunction(.Basic_Fragment), forKey: .Basic_Fragment)
+        addShader(shaderType: .Basic_Fragment)
+        addShader(shaderType: .Textured_Fragment)
+    }
+    
+    private static func addShader(shaderType: ShaderFunctionTypes){
+        shaderFunctions.updateValue(ShaderFunction(shaderType), forKey: shaderType)
     }
     
     public static func shaderFunction(_ shaderType: ShaderFunctionTypes)->MTLFunction{

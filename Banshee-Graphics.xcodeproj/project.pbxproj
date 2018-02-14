@@ -29,6 +29,8 @@
 		BD99A2302033A36E00E18569 /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A22F2033A36E00E18569 /* Texturable.swift */; };
 		BD99A23F2034BB6200E18569 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BD99A23E2034BB6200E18569 /* BasicShaders.metal */; };
 		BD99A2412034BB8500E18569 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2402034BB8500E18569 /* String_Extension.swift */; };
+		BD99A2432034BE4C00E18569 /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2422034BE4C00E18569 /* Quad.swift */; };
+		BD99A2472034C07900E18569 /* colors.png in Resources */ = {isa = PBXBuildFile; fileRef = BD99A2462034C07900E18569 /* colors.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		BD99A22F2033A36E00E18569 /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
 		BD99A23E2034BB6200E18569 /* BasicShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; name = BasicShaders.metal; path = "Banshee-Graphics/Metal Files/BasicShaders.metal"; sourceTree = SOURCE_ROOT; };
 		BD99A2402034BB8500E18569 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String_Extension.swift; path = "Banshee-Graphics/Core/Extensions/String_Extension.swift"; sourceTree = SOURCE_ROOT; };
+		BD99A2422034BE4C00E18569 /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		BD99A2462034C07900E18569 /* colors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colors.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		BD8536D62028BC760061175E /* Banshee-Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				BD99A2442034C05B00E18569 /* Assets */,
 				BD8537062028BCE90061175E /* Other FIles */,
 				BD8537312028EA7D0061175E /* Core */,
 				BD99A23C2034BB3400E18569 /* Libraries */,
@@ -214,6 +219,7 @@
 			children = (
 				BD8537352028EB140061175E /* Primitive.swift */,
 				BD8537382028EDA20061175E /* Triangle.swift */,
+				BD99A2422034BE4C00E18569 /* Quad.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -252,6 +258,22 @@
 			);
 			name = "Metal Files";
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BD99A2442034C05B00E18569 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BD99A2452034C06A00E18569 /* Res */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BD99A2452034C06A00E18569 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				BD99A2462034C07900E18569 /* colors.png */,
+			);
+			path = Res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD99A2472034C07900E18569 /* colors.png in Resources */,
 				BD8536DF2028BC760061175E /* Assets.xcassets in Resources */,
 				BD8536E22028BC760061175E /* Main.storyboard in Resources */,
 			);
@@ -400,6 +423,7 @@
 				BD99A2302033A36E00E18569 /* Texturable.swift in Sources */,
 				BD99A2412034BB8500E18569 /* String_Extension.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
+				BD99A2432034BE4C00E18569 /* Quad.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 				BD853749202901C50061175E /* Renderable.swift in Sources */,
 				BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */,

@@ -2,6 +2,7 @@ import MetalKit
 
 enum RenderPipelineStateType{
     case BASIC
+    case TEXTURED
 }
 
 class RenderPipelineStateLibrary{
@@ -13,9 +14,8 @@ class RenderPipelineStateLibrary{
     }
     
     private static func setupAllRenderPipelineStates(){
-
-        renderPipelineStates.updateValue(Basic_RenderPipelineState(), forKey: .BASIC) 
-        
+        renderPipelineStates.updateValue(Basic_RenderPipelineState(), forKey: .BASIC)
+        renderPipelineStates.updateValue(Textured_RenderPipelineState(), forKey: .TEXTURED)
     }
     
     public static func pipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
@@ -49,6 +49,24 @@ class Basic_RenderPipelineState: RenderPipelineState{
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
         renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Basic_Vertex)
         renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Basic_Fragment)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.vertexDescriptor(.BASE)
+        return renderPipelineDescriptor
+    }
+    
+    init() {
+        renderPipelineState = buildRenderPipelineState(renderPipelineDescriptor)
+    }
+}
+
+class Textured_RenderPipelineState: RenderPipelineState{
+    var name: String = "Textured Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor{
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Textured_Vertex)
+        renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Textured_Fragment)
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.vertexDescriptor(.BASE)
         return renderPipelineDescriptor
     }
