@@ -1,38 +1,30 @@
 import MetalKit
 
-struct Vertex{
-    var position: float3
-    var color: float4
-    
+protocol sizeable{
+    static func size(_ count: Int)->Int
+    static func stride(_ count: Int)->Int
+}
+
+extension sizeable{
     static func size(_ count: Int)->Int{
-        return MemoryLayout<Vertex>.size * count
+        return MemoryLayout<Self>.size * count
     }
     
     static func stride(_ count: Int)->Int{
-        return MemoryLayout<Vertex>.stride * count
+        return MemoryLayout<Self>.stride * count
     }
 }
 
-struct ModelConstants{
-    
-    
-    static var size: Int{
-        return MemoryLayout<ModelConstants>.size
-    }
-    
-    static var stride: Int{
-        return MemoryLayout<ModelConstants>.stride
-    }
+struct Vertex: sizeable {
+    var position: float3
+    var color: float4
 }
 
-struct SceneConstants{
-    
-    
-    static var size: Int{
-        return MemoryLayout<ModelConstants>.size
-    }
-    
-    static var stride: Int{
-        return MemoryLayout<ModelConstants>.stride
-    }
+struct ModelConstants: sizeable{
+    var model_matrix = matrix_identity_float4x4
+}
+
+class SceneConstants: sizeable{
+    var projection_matrix = matrix_identity_float4x4
+    var view_matrix = matrix_identity_float4x4
 }

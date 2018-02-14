@@ -12,7 +12,7 @@ class Node {
         for child in children{
             child.render(renderCommandEncoder)
         }
-        if let drawable = self as? Primitive{
+        if let drawable = self as? Renderable{
             drawable.doRender(renderCommandEncoder)
         }
     }

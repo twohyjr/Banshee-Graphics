@@ -27,6 +27,8 @@
 		BD8537462028EF190061175E /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537432028EF190061175E /* Types.swift */; };
 		BD8537472028EF190061175E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537442028EF190061175E /* Preferences.swift */; };
 		BD853749202901C50061175E /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD853748202901C50061175E /* Renderable.swift */; };
+		BD99A2302033A36E00E18569 /* Texturable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A22F2033A36E00E18569 /* Texturable.swift */; };
+		BD99A2322033A44300E18569 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2312033A44300E18569 /* String_Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		BD8537432028EF190061175E /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = "Banshee-Graphics/Core/Types.swift"; sourceTree = SOURCE_ROOT; };
 		BD8537442028EF190061175E /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = "Banshee-Graphics/Core/Preferences.swift"; sourceTree = SOURCE_ROOT; };
 		BD853748202901C50061175E /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
+		BD99A22F2033A36E00E18569 /* Texturable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Texturable.swift; sourceTree = "<group>"; };
+		BD99A2312033A44300E18569 /* String_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String_Extension.swift; path = "Banshee-Graphics/New Group1/Extensions/String_Extension.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 		BD8537312028EA7D0061175E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				BD99A2332033A4D200E18569 /* Extensions */,
 				BD8537422028EF190061175E /* Engine.swift */,
 				BD8537442028EF190061175E /* Preferences.swift */,
 				BD8537432028EF190061175E /* Types.swift */,
@@ -237,8 +242,17 @@
 			isa = PBXGroup;
 			children = (
 				BD853748202901C50061175E /* Renderable.swift */,
+				BD99A22F2033A36E00E18569 /* Texturable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BD99A2332033A4D200E18569 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BD99A2312033A44300E18569 /* String_Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,11 +392,13 @@
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
 				BD8537462028EF190061175E /* Types.swift in Sources */,
 				BD8537172028C6F60061175E /* GameView.swift in Sources */,
+				BD99A2322033A44300E18569 /* String_Extension.swift in Sources */,
 				BD8537362028EB140061175E /* Primitive.swift in Sources */,
 				BD8537342028EACB0061175E /* Node.swift in Sources */,
 				BD8537472028EF190061175E /* Preferences.swift in Sources */,
 				BD85370B2028C4410061175E /* Renderer.swift in Sources */,
 				BD8536D82028BC760061175E /* AppDelegate.swift in Sources */,
+				BD99A2302033A36E00E18569 /* Texturable.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 				BD853749202901C50061175E /* Renderable.swift in Sources */,
