@@ -14,6 +14,15 @@ struct VertexOut{
     float2 textureCoordinate;
 };
 
+struct ModelConstants{
+    float4x4 modelMatrix;
+};
+
+struct SceneConstants{
+    float4x4 projectionMatrix;
+    float4x4 viewMatrix;
+};
+
 
 //-----------------BASIC SHADERS-----------------------
 vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]]){
@@ -33,9 +42,12 @@ fragment half4 basic_fragment_shader(const VertexOut vIn [[ stage_in ]]){
 
 
 //-----------------TEXTURED SHADERS-----------------------
-vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]]){
+vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]],
+                                        constant ModelConstants &modelConstants [[ buffer(1) ]]){
     VertexOut vOut;
-    vOut.position = float4(vIn.position, 1);
+    float4x4 transformationMatrix = modelConstants.modelMatrix;
+    float4 worldPosition = transformationMatrix * float4(vIn.position, 1.0);
+    vOut.position = worldPosition;
     vOut.color = vIn.color;
     vOut.textureCoordinate = vIn.textureCoordinate;
     

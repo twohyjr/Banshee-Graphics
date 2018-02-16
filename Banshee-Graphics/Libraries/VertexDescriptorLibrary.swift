@@ -48,7 +48,7 @@ class Base_VertexDescriptor: VertexDescriptor{
         vertexDescriptor.attributes[2].bufferIndex = 0
         vertexDescriptor.attributes[2].offset = MemoryLayout<float3>.size + MemoryLayout<float4>.size
         
-        vertexDescriptor.layouts[0].stride = Vertex.stride(1)
+        vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.stride
         
         return vertexDescriptor
     }

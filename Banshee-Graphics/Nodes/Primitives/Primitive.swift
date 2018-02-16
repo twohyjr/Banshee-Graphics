@@ -24,6 +24,15 @@ class Primitive : Node{
     private func buildBuffers(){
         vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
     }
+    
+    private func updateModel(){
+        scale = float3(0.5)
+    }
+    
+    private func setModelConstants(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        modelConstants.model_matrix = modelMatrix
+        renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 1)
+    }
 }
 
 extension Primitive: Renderable{
@@ -36,10 +45,15 @@ extension Primitive: Renderable{
     }
 
     func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
+        updateModel()
+        
+        setModelConstants(renderCommandEncoder)
+        
         if(texture != nil){
             renderCommandEncoder.setFragmentSamplerState(SamplerStateLibrary.samplerState(.BASIC), index: 0)
             renderCommandEncoder.setFragmentTexture(texture, index: 0)
         }
+        
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)

@@ -2,6 +2,9 @@ import MetalKit
 
 class Scene : Node{
     
+    var camera = Camera()
+    var sceneConstants = SceneConstants()
+    
     override init() {
         super.init()
         buildScene()
