@@ -43,11 +43,17 @@ fragment half4 basic_fragment_shader(const VertexOut vIn [[ stage_in ]]){
 
 //-----------------TEXTURED SHADERS-----------------------
 vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]],
-                                        constant ModelConstants &modelConstants [[ buffer(1) ]]){
+                                        constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                        constant ModelConstants &modelConstants [[ buffer(2) ]]){
+    
     VertexOut vOut;
+    
+    //Vertex Position Descriptors
     float4x4 transformationMatrix = modelConstants.modelMatrix;
     float4 worldPosition = transformationMatrix * float4(vIn.position, 1.0);
-    vOut.position = worldPosition;
+    vOut.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * worldPosition;
+
+
     vOut.color = vIn.color;
     vOut.textureCoordinate = vIn.textureCoordinate;
     
