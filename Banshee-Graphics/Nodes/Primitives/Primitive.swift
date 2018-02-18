@@ -27,11 +27,12 @@ class Primitive : Node{
     
     private func updateModel(){
         scale = float3(0.5)
+        rotation.y += 0.03
     }
     
     private func setModelConstants(_ renderCommandEncoder: MTLRenderCommandEncoder){
         modelConstants.model_matrix = modelMatrix
-        renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 1)
+        renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 2)
     }
 }
 
@@ -44,7 +45,7 @@ extension Primitive: Renderable{
         }
     }
 
-    func doRender(_ renderCommandEncoder: MTLRenderCommandEncoder){
+    func draw(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
 
         updateModel()

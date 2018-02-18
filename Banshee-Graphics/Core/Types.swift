@@ -25,7 +25,7 @@ struct ModelConstants: sizeable{
     var model_matrix: matrix_float4x4 = matrix_identity_float4x4
 }
 
-class SceneConstants: sizeable{
+struct SceneConstants: sizeable{
     var projection_matrix: matrix_float4x4 = matrix_identity_float4x4
     var view_matrix: matrix_float4x4  = matrix_identity_float4x4
 }

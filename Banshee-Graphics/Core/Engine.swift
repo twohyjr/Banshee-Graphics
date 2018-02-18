@@ -22,6 +22,8 @@ class Engine {
         
         SamplerStateLibrary.initialize()
         
+        DepthStencilStateLibrary.initialize()
+        
         RenderPipelineStateLibrary.initialize()
         
     }

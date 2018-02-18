@@ -14,6 +14,7 @@
 		BD6E2E87203A26530020DD09 /* String_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E81203A26520020DD09 /* String_Extension.swift */; };
 		BD6E2E88203A26530020DD09 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E82203A26530020DD09 /* Types.swift */; };
 		BD6E2E8B203A269D0020DD09 /* BasicShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E8A203A269D0020DD09 /* BasicShaders.metal */; };
+		BD6E2E8D203A3F840020DD09 /* DepthStencilStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E8C203A3F840020DD09 /* DepthStencilStateLibrary.swift */; };
 		BD8536D82028BC760061175E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8536D72028BC760061175E /* AppDelegate.swift */; };
 		BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD8536DB2028BC760061175E /* Banshee_Graphics.xcdatamodeld */; };
 		BD8536DF2028BC760061175E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8536DE2028BC760061175E /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		BD6E2E81203A26520020DD09 /* String_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Extension.swift; sourceTree = "<group>"; };
 		BD6E2E82203A26530020DD09 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		BD6E2E8A203A269D0020DD09 /* BasicShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = BasicShaders.metal; sourceTree = "<group>"; };
+		BD6E2E8C203A3F840020DD09 /* DepthStencilStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthStencilStateLibrary.swift; sourceTree = "<group>"; };
 		BD8536D42028BC760061175E /* Banshee-Graphics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banshee-Graphics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8536D72028BC760061175E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD8536DC2028BC760061175E /* Banshee_Graphics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Banshee_Graphics.xcdatamodel; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				BD85373D2028EF0A0061175E /* ShaderFunctionLibrary.swift */,
 				BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */,
 				BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */,
+				BD6E2E8C203A3F840020DD09 /* DepthStencilStateLibrary.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				BD85370B2028C4410061175E /* Renderer.swift in Sources */,
 				BD8536D82028BC760061175E /* AppDelegate.swift in Sources */,
 				BD99A2302033A36E00E18569 /* Texturable.swift in Sources */,
+				BD6E2E8D203A3F840020DD09 /* DepthStencilStateLibrary.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
 				BD99A2432034BE4C00E18569 /* Quad.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,

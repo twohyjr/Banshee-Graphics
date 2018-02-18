@@ -23,11 +23,16 @@ struct SceneConstants{
     float4x4 viewMatrix;
 };
 
+//Declare shared functions up here
+float4 getViewPosition(float3 vertexPosition, ModelConstants modelConstants, SceneConstants sceneConstants);
 
 //-----------------BASIC SHADERS-----------------------
-vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]]){
+vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
+                                     constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                     constant ModelConstants &modelConstants [[ buffer(2) ]]){
     VertexOut vOut;
-    vOut.position = float4(vIn.position, 1);
+    
+    vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
     vOut.color = vIn.color;
     vOut.textureCoordinate = vIn.textureCoordinate;
     
@@ -39,21 +44,13 @@ fragment half4 basic_fragment_shader(const VertexOut vIn [[ stage_in ]]){
     return half4(color.r, color.g, color.b, color.a);
 }
 
-
-
 //-----------------TEXTURED SHADERS-----------------------
 vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]],
                                         constant SceneConstants &sceneConstants [[ buffer(1) ]],
                                         constant ModelConstants &modelConstants [[ buffer(2) ]]){
-    
     VertexOut vOut;
-    
-    //Vertex Position Descriptors
-    float4x4 transformationMatrix = modelConstants.modelMatrix;
-    float4 worldPosition = transformationMatrix * float4(vIn.position, 1.0);
-    vOut.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * worldPosition;
 
-
+    vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
     vOut.color = vIn.color;
     vOut.textureCoordinate = vIn.textureCoordinate;
     
@@ -65,5 +62,11 @@ fragment half4 textured_fragment_shader(const VertexOut vIn [[ stage_in ]],
                                         texture2d<float> texture [[ texture(0) ]]){
     float4 color = texture.sample(sampler2d, vIn.textureCoordinate);
     return half4(color.r, color.g, color.b, color.a);
+}
+
+
+//------------------SHARED FUNCTIONS---------------------------
+float4 getViewPosition(float3 vertexPosition, ModelConstants modelConstants, SceneConstants sceneConstants){
+    return sceneConstants.projectionMatrix * sceneConstants.viewMatrix * modelConstants.modelMatrix * float4(vertexPosition, 1.0);
 }
 

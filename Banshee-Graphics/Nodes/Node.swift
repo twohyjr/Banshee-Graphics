@@ -27,7 +27,7 @@ class Node {
             child.render(renderCommandEncoder)
         }
         if let drawable = self as? Renderable{
-            drawable.doRender(renderCommandEncoder)
+            drawable.draw(renderCommandEncoder)
         }
     }
 }

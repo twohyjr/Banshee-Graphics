@@ -6,7 +6,9 @@ class Renderer: NSObject{
 
 extension Renderer: MTKViewDelegate {
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) { }
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        Preferences.camera_aspectRatio = Float(size.width) / Float(size.height)
+    }
     
     func draw(in view: MTKView) {
         let commandBuffer = Engine.commandQueue.makeCommandBuffer()

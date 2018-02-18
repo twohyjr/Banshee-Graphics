@@ -7,6 +7,8 @@ class GameView: MTKView {
 
         self.device = MTLCreateSystemDefaultDevice()
         
+        self.clearColor = Preferences.ClearColor
+        
         Engine.startup(device: device!, mtkView: self)
         
         self.colorPixelFormat = Preferences.MainPixelFormat
