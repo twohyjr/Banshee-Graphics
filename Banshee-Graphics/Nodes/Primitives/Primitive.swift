@@ -21,13 +21,12 @@ class Primitive : Node{
     
     public func buildVertices(){ }
     
-    private func buildBuffers(){
-        vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
+    private func updateModel(){
+        
     }
     
-    private func updateModel(){
-        scale = float3(0.5)
-        rotation.y += 0.03
+    private func buildBuffers(){
+        vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
     }
     
     private func setModelConstants(_ renderCommandEncoder: MTLRenderCommandEncoder){

@@ -1,17 +1,23 @@
 import MetalKit
 
-func radians(fromDegrees degrees: Float) -> Float{
-    return (degrees / 180) * Float.pi
-}
 
 
-class Maths{
+
+class Math{
     public static func barryCentric(_ p1: float3,_ p2: float3,_ p3: float3,_ pos: float2)->Float{
         let det = (p2.z - p3.z) * (p1.x - p3.x) + (p3.x - p2.x) * (p1.z - p3.z);
         let l1 = ((p2.z - p3.z) * (pos.x - p3.x) + (p3.x - p2.x) * (pos.y - p3.z)) / det;
         let l2 = ((p3.z - p1.z) * (pos.x - p3.x) + (p1.x - p3.x) * (pos.y - p3.z)) / det;
         let l3 = 1.0 - l1 - l2;
         return l1 * p1.y + l2 * p2.y + l3 * p3.y;
+    }
+    
+    public static func toRadians(_ degrees: Float) -> Float{
+        return (degrees / 180) * Float.pi
+    }
+    
+    public static func toDegrees(_ radians: Float) -> Float{
+        return radians * (180 / Float.pi)
     }
 }
 

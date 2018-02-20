@@ -1,8 +1,7 @@
 import MetalKit
 
 class Scene : Node{
-    
-    var camera = Camera()
+
     var sceneConstants = SceneConstants()
     
     override init() {
@@ -11,17 +10,17 @@ class Scene : Node{
     }
     
     func buildScene() {
-        addChild(Quad(textureName: "colors.png"))
-        camera.position.z = 5
+        //Add all of the scenes current entities
     }
     
     private func updateScene(){
         //Update the scene here (ex: camera position)
+        Camera.yaw += 0.004
     }
     
     func doRender(renderCommandEncoder: MTLRenderCommandEncoder){
-        sceneConstants.projection_matrix = camera.projectionMatrix
-        sceneConstants.view_matrix = camera.viewMatrix
+        sceneConstants.projection_matrix = Camera.projectionMatrix
+        sceneConstants.view_matrix = Camera.viewMatrix
         
         renderCommandEncoder.setDepthStencilState(DepthStencilStateLibrary.depthStencilState(DepthStencilStateType.BASIC))
         renderCommandEncoder.setVertexBytes(&sceneConstants, length: SceneConstants.stride(1), index: 1)
@@ -29,6 +28,7 @@ class Scene : Node{
             child.render(renderCommandEncoder)
         }
     }
+
     
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
         

@@ -3,7 +3,7 @@ import MetalKit
 extension matrix_float4x4{
     
     init(perspectiveDegreesFov degreesFov: Float, aspectRatio: Float, nearZ: Float, farZ: Float){
-        let fov = radians(fromDegrees: degreesFov)
+        let fov = Math.toRadians(degreesFov)
         
         let y = 1 / tan(fov * 0.5)
         let x = y / aspectRatio

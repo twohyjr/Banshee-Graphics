@@ -16,6 +16,10 @@ class Engine {
         self.library = device.makeDefaultLibrary()
         self.renderer = Renderer()
         
+        SceneManager.initialize(startingSceneType: .Basic)
+        
+        GameManager.initialize()
+        
         VertexDescriptorLibrary.initialize()
         
         ShaderFunctionLibrary.initialize()
