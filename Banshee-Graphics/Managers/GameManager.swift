@@ -7,7 +7,9 @@ class GameManager {
     }
     
     public static func update(){
+        Camera.update()
         
+        SceneManager.CurrentScene.update()
     }
     
     public static func render(){

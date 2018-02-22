@@ -11,6 +11,10 @@ class Scene_Basic : Scene{
         let quad2 = Triangle(textureName: "colors.png")
         quad2.position.y = -1.2
         addChild(quad2)
-
     }
+    
+    override func update(){
+       
+    }
+    
 }

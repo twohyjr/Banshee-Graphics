@@ -13,12 +13,12 @@ class Scene : Node{
         //Add all of the scenes current entities
     }
     
-    private func updateScene(){
-        //Update the scene here (ex: camera position)
-        Camera.yaw += 0.004
+    func update(){
+        //Update models in the scene here
     }
     
-    func doRender(renderCommandEncoder: MTLRenderCommandEncoder){
+    override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
+
         sceneConstants.projection_matrix = Camera.projectionMatrix
         sceneConstants.view_matrix = Camera.viewMatrix
         
@@ -27,14 +27,6 @@ class Scene : Node{
         for child in children{
             child.render(renderCommandEncoder)
         }
-    }
-
-    
-    override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
-        
-        updateScene()
-        
-        doRender(renderCommandEncoder: renderCommandEncoder)
         
     }
 }

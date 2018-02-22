@@ -16,7 +16,9 @@ class Engine {
         self.library = device.makeDefaultLibrary()
         self.renderer = Renderer()
         
-        SceneManager.initialize(startingSceneType: .Basic)
+        ModelDataLibrary.initialize()
+        
+        SceneManager.initialize(startingSceneType: .Terrain)
         
         GameManager.initialize()
         

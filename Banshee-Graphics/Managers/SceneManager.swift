@@ -2,6 +2,7 @@ import MetalKit
 
 public enum SceneTypes{
     case Basic
+    case Terrain
 }
 
 class SceneManager {
@@ -17,6 +18,8 @@ class SceneManager {
         switch sceneType {
         case .Basic:
             CurrentScene = Scene_Basic()
+        case .Terrain:
+            CurrentScene = Scene_Terrain()
         }
     }
     

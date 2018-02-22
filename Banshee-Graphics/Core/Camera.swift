@@ -22,4 +22,8 @@ class Camera{
         return viewMatrix
     }
 
+    static func update(){
+        
+    }
+
 }
