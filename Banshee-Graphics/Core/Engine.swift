@@ -18,7 +18,7 @@ class Engine {
         
         ModelDataLibrary.initialize()
         
-        SceneManager.initialize(startingSceneType: .Terrain)
+        SceneManager.initialize(startingSceneType: .Basic)
         
         GameManager.initialize()
         

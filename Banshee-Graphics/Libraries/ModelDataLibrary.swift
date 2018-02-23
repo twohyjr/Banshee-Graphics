@@ -3,10 +3,12 @@ import MetalKit
 enum ModelDataTypes{
     case TRIANGLE
     case STALL
+    case QUAD
 }
 
 enum CustomDataTypes{
     case TRIANGLE
+    case QUAD
 }
 
 enum FileDataTypes{
@@ -24,6 +26,7 @@ class ModelDataLibrary {
     private static func setupAllModelData(){
         //Add the custom models here
         addCustomModel(.TRIANGLE)
+        addCustomModel(.QUAD)
         
         //Add the file models here
         addFileModel(.STALL)
@@ -34,16 +37,17 @@ class ModelDataLibrary {
     }
     
     private static func addCustomModel(_ customDataType: CustomDataTypes){
-        var modelData = ModelData()
-        var modelDataType: ModelDataTypes? = nil
+        var baseData: BaseModelData!
         switch customDataType {
-            case .TRIANGLE:
-                let triangle = Triangle()
-                modelData.vertices = triangle.vertices
-                modelData.indices = triangle.indices
-                modelDataType = .TRIANGLE
+        case .TRIANGLE:
+            baseData = Triangle()
+        case .QUAD:
+            baseData = Quad()
         }
-        modelDataCollection.updateValue(modelData, forKey: modelDataType!)
+        var modelData = ModelData()
+        modelData.vertices = baseData.vertices
+        modelData.indices = baseData.indices
+        modelDataCollection.updateValue(modelData, forKey: baseData.modelDataType)
     }
     
     private static func addFileModel(_ fileDataType: FileDataTypes){

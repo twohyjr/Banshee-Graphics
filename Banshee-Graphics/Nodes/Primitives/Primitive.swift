@@ -10,20 +10,27 @@ class Primitive : Node{
     
     var modelConstants = ModelConstants()
     
-    convenience init(textureName: String){
-        self.init()
-        
-        texture = generateTexture(textureName: textureName)
-    }
+//    convenience init(textureName: String){
+//        self.init()
+//        
+//
+//    }
     
-    override init(){
+    init(modelDataType: ModelDataTypes, textureName: String = String.Empty){
         super.init()
-        buildVertices()
+        setTexture(textureName)
+        buildVertices(modelDataType: modelDataType)
         buildBuffers()
     }
+    
+    private func setTexture(_ textureName: String){
+        if(textureName != String.Empty){
+            texture = generateTexture(textureName: textureName)
+        }
+    }
 
-    public func buildVertices(){
-        let modelData = ModelDataLibrary.modelData(.TRIANGLE)
+    public func buildVertices(modelDataType: ModelDataTypes){
+        let modelData = ModelDataLibrary.modelData(modelDataType)
         vertices = modelData.vertices
         indices = modelData.indices
     }
