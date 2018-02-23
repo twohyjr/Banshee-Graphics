@@ -11,7 +11,7 @@ struct ModelData{
     var colorNum: Float = 0.0
     mutating func addPosition(_ position: float3){
         positions.append(position)
-        vertices.append(Vertex(position: position, color: float4(colorNum,0,colorNum,1), textureCoordinate: float2(0)))
+        vertices.append(Vertex(position: position, color: float4(1), normal: float3(0), textureCoordinate: float2(0)))
         colorNum += 0.005
     }
     
@@ -35,9 +35,9 @@ struct ModelData{
             vertices[vertexIndex].textureCoordinate = float2(textureCoord.x, 1 - textureCoord.y) //blender starts from bottom left
         }
         
-        //        if(normals.count > 0){
-        //            let normal: float3 = normals[Int(vertexData.z) - 1]
-        //            vertices[vertexIndex].normal = normal
-        //        }
+        if(normals.count > 0){
+            let normal: float3 = normals[Int(vertexData.z) - 1]
+            vertices[vertexIndex].normal = normal
+        }
     }
 }
