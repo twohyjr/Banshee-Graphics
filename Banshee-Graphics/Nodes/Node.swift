@@ -22,6 +22,12 @@ class Node {
         children.append(child)
     }
     
+    public func tick(){
+        for child in children{
+            child.tick()
+        }
+    }
+    
     public func render(_ renderCommandEncoder: MTLRenderCommandEncoder){
         for child in children{
             child.render(renderCommandEncoder)

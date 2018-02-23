@@ -22,7 +22,7 @@ extension Renderer: MTKViewDelegate {
     }
 
     func draw(in view: MTKView) {
-        GameManager.update()
+        GameManager.tick()
         GameManager.render()
     }
     

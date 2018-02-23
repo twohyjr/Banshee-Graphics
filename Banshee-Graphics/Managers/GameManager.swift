@@ -6,10 +6,10 @@ class GameManager {
         
     }
     
-    public static func update(){
+    public static func tick(){
         Camera.update()
         
-        SceneManager.CurrentScene.update()
+        SceneManager.CurrentScene.tick()
     }
     
     public static func render(){

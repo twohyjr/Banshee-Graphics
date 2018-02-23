@@ -13,10 +13,6 @@ class Scene : Node{
         //Add all of the scenes current entities
     }
     
-    func update(){
-        //Update models in the scene here
-    }
-    
     override func render(_ renderCommandEncoder: MTLRenderCommandEncoder) {
 
         sceneConstants.projection_matrix = Camera.projectionMatrix
