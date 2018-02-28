@@ -3,23 +3,75 @@ import MetalKit
 class MeshLoader {
     
     public static func LoadMeshDataFromWavefront(modelName: String)->MeshData{
+        var meshData = MeshData()
 //--------------------------------------------------------------------------------------------
 //------ Custom Model ---------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
         let baseData: BaseMeshData = Quad()
-        return getMeshData(baseMeshData: baseData)
+        meshData = getMeshData(baseMeshData: baseData)
         
         
 //--------------------------------------------------------------------------------------------
-//------ Apple Designed Model -------------------------------------------------------------------
+//------ Apple Designed Models ------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
 //        let bufferAllocator = MTKMeshBufferAllocator(device: Engine.device)
+//        //----PLANE-----
 //        let mdlMesh: MDLMesh = MDLMesh(planeWithExtent: vector_float3(1, 1, 1),
 //                                       segments: vector_uint2(100, 100),
 //                                       geometryType: .triangleStrips,
 //                                       allocator: bufferAllocator)
+//
+//        //----CONE-----
+//        let mdlMesh: MDLMesh = MDLMesh(coneWithExtent: vector_float3(1,1,1),
+//                                       segments: vector_uint2(100,100),
+//                                       inwardNormals: false,
+//                                       cap: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//
+//        //----SPHERE-----
+//        let mdlMesh: MDLMesh = MDLMesh(sphereWithExtent: vector_float3(1,1,1),
+//                                       segments: vector_uint2(100,100),
+//                                       inwardNormals: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//
+//        //----ICOSAHEDRON-----
+//        let mdlMesh: MDLMesh = MDLMesh(icosahedronWithExtent: vector_float3(1,1,1),
+//                                       inwardNormals: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//        //----CAPSULE-----
+//        let mdlMesh: MDLMesh = MDLMesh(capsuleWithExtent: vector_float3(1,1,1),
+//                                       cylinderSegments: vector_uint2(100,100),
+//                                       hemisphereSegments: 100,
+//                                       inwardNormals: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//        //----CYLINDER-----
+//        let mdlMesh: MDLMesh = MDLMesh(cylinderWithExtent: vector_float3(1,1,1),
+//                                       segments: vector_uint2(100,100),
+//                                       inwardNormals: false,
+//                                       topCap: false,
+//                                       bottomCap: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//        //----HEMISPHERE-----
+//        let mdlMesh: MDLMesh = MDLMesh(hemisphereWithExtent: vector_float3(1,1,1),
+//                                       segments: vector_uint2(100,100),
+//                                       inwardNormals: false,
+//                                       cap: true,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//      //----CUBE-----
+//        let mdlMesh: MDLMesh = MDLMesh(boxWithExtent: vector_float3(1,1,1),
+//                                       segments: vector_uint3(100,100,100),
+//                                       inwardNormals: false,
+//                                       geometryType: .triangles,
+//                                       allocator: bufferAllocator)
+//
 //        mdlMesh.vertexDescriptor = MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC)
-//        return getMeshData(mdlMesh: mdlMesh)
+//        meshData = getMeshData(mdlMesh: mdlMesh)
         
         
 //--------------------------------------------------------------------------------------------
@@ -33,8 +85,9 @@ class MeshLoader {
 //                             vertexDescriptor: MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC),
 //                             bufferAllocator: bufferAllocator)
 //
-//        return getMeshData(mdlAsset: asset)
-
+//        meshData = getMeshData(mdlAsset: asset)
+//--------------------------------------------------------------------------------------------
+        return meshData
     }
     
     ///Input is a custom model
