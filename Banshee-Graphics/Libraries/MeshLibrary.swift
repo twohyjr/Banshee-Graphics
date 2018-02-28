@@ -11,10 +11,13 @@ enum MeshDataTypes{
     
     //Apple Desinged Types
     case PLANE_APPLE
-}
-
-enum AppleDesignedMeshTypes{
-    case PLANE
+    case CONE_APPLE
+    case SPHERE_APPLE
+    case ICOSAHEDRON_APPLE
+    case CAPSULE_APPLE
+    case CYLINDER_APPLE
+    case HEMISPHERE_APPLE
+    case CUBE_APPLE
 }
 
 class MeshLibrary {
@@ -35,6 +38,12 @@ class MeshLibrary {
         
         //Apple Meshes
         addAppleDesignedMesh(appleDesignedMeshType: .PLANE, meshDataType: .PLANE_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .CONE, meshDataType: .CONE_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .SPHERE, meshDataType: .SPHERE_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .ICOSAHEDRON, meshDataType: .ICOSAHEDRON_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .CAPSULE, meshDataType: .CAPSULE_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .CYLINDER, meshDataType: .CYLINDER_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .CUBE, meshDataType: .CUBE_APPLE)
     }
     
     public static func mesh(_ meshDataType: MeshDataTypes)->MeshData{

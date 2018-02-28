@@ -4,6 +4,7 @@ class FruitStand: Primitive {
 
     init(){
         super.init(baseMeshType: .FRUIT_STAND, textureName: "stallTexture.png")
+        addChild(Sun())
         rotation = float3(0.15, 4.05, 0.0)
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */; };
+		BD5E722E20466A6B00901029 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722D20466A6B00901029 /* Sun.swift */; };
 		BD6E2E83203A26530020DD09 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7D203A26520020DD09 /* Engine.swift */; };
 		BD6E2E84203A26530020DD09 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7E203A26520020DD09 /* MathUtils.swift */; };
 		BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshVertexDescriptorLibrary.swift; sourceTree = "<group>"; };
+		BD5E722D20466A6B00901029 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		BD6E2E7D203A26520020DD09 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		BD6E2E7E203A26520020DD09 /* MathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix_Float4_Extension.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				BD96A452203FA0BB00C96D4F /* FruitStand.swift */,
+				BD5E722D20466A6B00901029 /* Sun.swift */,
 			);
 			path = "Game Objects";
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				BD99A2302033A36E00E18569 /* Texturable.swift in Sources */,
 				BD6E2E8D203A3F840020DD09 /* DepthStencilStateLibrary.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
+				BD5E722E20466A6B00901029 /* Sun.swift in Sources */,
 				BD99A2432034BE4C00E18569 /* Quad.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 				BD99A2512036743400E18569 /* Camera.swift in Sources */,
