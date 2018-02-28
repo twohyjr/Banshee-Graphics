@@ -2,25 +2,14 @@ import MetalKit
 
 class Primitive : Node{
     
-    var vertices: [Vertex]!
-    var indices: [UInt32] = []
-    var vertexBuffer: MTLBuffer!
-    var indexBuffer: MTLBuffer!
+    var meshData: MeshData!
     var texture: MTLTexture!
-    
     var modelConstants = ModelConstants()
     
-//    convenience init(textureName: String){
-//        self.init()
-//        
-//
-//    }
-    
-    init(modelDataType: MeshTypes, textureName: String = String.Empty){
+    init(textureName: String = String.Empty){
         super.init()
         setTexture(textureName)
-        buildVertices(modelDataType: modelDataType)
-        buildBuffers()
+        meshData = MeshLoader.LoadMeshDataFromWavefront(modelName: "stall")
     }
     
     private func setTexture(_ textureName: String){
@@ -29,21 +18,10 @@ class Primitive : Node{
         }
     }
 
-    public func buildVertices(modelDataType: MeshTypes){
-        let modelData = MeshLibrary.mesh(modelDataType)
-        vertices = modelData.vertices
-        indices = modelData.indices
-    }
+    public func buildVertices(){ }
     
     public func buildIndices(){ }
-    
-    private func buildBuffers(){
-        vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
-        if(indices.count > 0){
-            indexBuffer = Engine.device.makeBuffer(bytes: indices, length: MemoryLayout<UInt32>.stride * indices.count, options: [])
-        }
-    }
-    
+
     private func setModelConstants(_ renderCommandEncoder: MTLRenderCommandEncoder){
         modelConstants.model_matrix = modelMatrix
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 2)
@@ -61,25 +39,26 @@ extension Primitive: Renderable{
 
     func draw(_ renderCommandEncoder: MTLRenderCommandEncoder){
         renderCommandEncoder.setRenderPipelineState(renderPipelineState)
-        
         setModelConstants(renderCommandEncoder)
-            
         if(texture != nil){
             renderCommandEncoder.setFragmentSamplerState(SamplerStateLibrary.samplerState(.BASIC), index: 0)
             renderCommandEncoder.setFragmentTexture(texture, index: 0)
         }
         
-        renderCommandEncoder.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderCommandEncoder.setFrontFacing(.counterClockwise)
+        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
+        renderCommandEncoder.setVertexBuffer(meshData.vertexBuffer, offset:0, index:0)
         
-        if(indices.count > 0){
-            renderCommandEncoder.drawIndexedPrimitives(type: .triangle,
-                                                       indexCount: indices.count,
-                                                       indexType: .uint32,
-                                                       indexBuffer: indexBuffer,
+        if(meshData.indexCount > 0){
+            renderCommandEncoder.drawIndexedPrimitives(type: meshData.primitiveType,
+                                                       indexCount: meshData.indexCount,
+                                                       indexType: meshData.indexType,
+                                                       indexBuffer: meshData.indexBuffer,
                                                        indexBufferOffset: 0)
         }else{
-            renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+            renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
         }
+
     }
 }
 

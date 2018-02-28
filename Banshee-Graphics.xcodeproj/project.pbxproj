@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */; };
 		BD6E2E83203A26530020DD09 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7D203A26520020DD09 /* Engine.swift */; };
 		BD6E2E84203A26530020DD09 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7E203A26520020DD09 /* MathUtils.swift */; };
 		BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */; };
@@ -29,13 +30,13 @@
 		BD8537392028EDA20061175E /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8537382028EDA20061175E /* Triangle.swift */; };
 		BD85373F2028EF0A0061175E /* RenderPipelineStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85373C2028EF0A0061175E /* RenderPipelineStateLibrary.swift */; };
 		BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85373D2028EF0A0061175E /* ShaderFunctionLibrary.swift */; };
-		BD8537412028EF0A0061175E /* VertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */; };
+		BD8537412028EF0A0061175E /* BaseVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD85373E2028EF0A0061175E /* BaseVertexDescriptorLibrary.swift */; };
 		BD853749202901C50061175E /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD853748202901C50061175E /* Renderable.swift */; };
 		BD96A41F203DF20C00C96D4F /* stall.obj in Resources */ = {isa = PBXBuildFile; fileRef = BD96A41E203DF20C00C96D4F /* stall.obj */; };
 		BD96A421203DF6CA00C96D4F /* stallTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = BD96A420203DF6C900C96D4F /* stallTexture.png */; };
 		BD96A43A203E88E900C96D4F /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A439203E88E900C96D4F /* FileHandler.swift */; };
-		BD96A43C203E8A9A00C96D4F /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43B203E8A9A00C96D4F /* ModelLoader.swift */; };
-		BD96A43E203E8AC800C96D4F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43D203E8AC800C96D4F /* ModelData.swift */; };
+		BD96A43C203E8A9A00C96D4F /* MeshLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43B203E8A9A00C96D4F /* MeshLoader.swift */; };
+		BD96A43E203E8AC800C96D4F /* MeshData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43D203E8AC800C96D4F /* MeshData.swift */; };
 		BD96A442203F392500C96D4F /* MeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A441203F392500C96D4F /* MeshLibrary.swift */; };
 		BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A44F203F9ED900C96D4F /* BaseMeshData.swift */; };
 		BD96A453203FA0BB00C96D4F /* FruitStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A452203FA0BB00C96D4F /* FruitStand.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshVertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		BD6E2E7D203A26520020DD09 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		BD6E2E7E203A26520020DD09 /* MathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix_Float4_Extension.swift; sourceTree = "<group>"; };
@@ -98,13 +100,13 @@
 		BD8537382028EDA20061175E /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		BD85373C2028EF0A0061175E /* RenderPipelineStateLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RenderPipelineStateLibrary.swift; path = "Banshee-Graphics/Libraries/RenderPipelineStateLibrary.swift"; sourceTree = SOURCE_ROOT; };
 		BD85373D2028EF0A0061175E /* ShaderFunctionLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShaderFunctionLibrary.swift; path = "Banshee-Graphics/Libraries/ShaderFunctionLibrary.swift"; sourceTree = SOURCE_ROOT; };
-		BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VertexDescriptorLibrary.swift; path = "Banshee-Graphics/Libraries/VertexDescriptorLibrary.swift"; sourceTree = SOURCE_ROOT; };
+		BD85373E2028EF0A0061175E /* BaseVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseVertexDescriptorLibrary.swift; path = "Banshee-Graphics/Libraries/BaseVertexDescriptorLibrary.swift"; sourceTree = SOURCE_ROOT; };
 		BD853748202901C50061175E /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		BD96A41E203DF20C00C96D4F /* stall.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stall.obj; sourceTree = "<group>"; };
 		BD96A420203DF6C900C96D4F /* stallTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stallTexture.png; sourceTree = "<group>"; };
 		BD96A439203E88E900C96D4F /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
-		BD96A43B203E8A9A00C96D4F /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
-		BD96A43D203E8AC800C96D4F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		BD96A43B203E8A9A00C96D4F /* MeshLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLoader.swift; sourceTree = "<group>"; };
+		BD96A43D203E8AC800C96D4F /* MeshData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshData.swift; sourceTree = "<group>"; };
 		BD96A441203F392500C96D4F /* MeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLibrary.swift; sourceTree = "<group>"; };
 		BD96A44F203F9ED900C96D4F /* BaseMeshData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMeshData.swift; sourceTree = "<group>"; };
 		BD96A452203FA0BB00C96D4F /* FruitStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStand.swift; sourceTree = "<group>"; };
@@ -157,8 +159,8 @@
 				BD99A2502036743400E18569 /* Camera.swift */,
 				BD6E2E82203A26530020DD09 /* Types.swift */,
 				BD96A439203E88E900C96D4F /* FileHandler.swift */,
-				BD96A43B203E8A9A00C96D4F /* ModelLoader.swift */,
-				BD96A43D203E8AC800C96D4F /* ModelData.swift */,
+				BD96A43B203E8A9A00C96D4F /* MeshLoader.swift */,
+				BD96A43D203E8AC800C96D4F /* MeshData.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -317,9 +319,10 @@
 			children = (
 				BD85373C2028EF0A0061175E /* RenderPipelineStateLibrary.swift */,
 				BD85373D2028EF0A0061175E /* ShaderFunctionLibrary.swift */,
-				BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */,
 				BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */,
 				BD6E2E8C203A3F840020DD09 /* DepthStencilStateLibrary.swift */,
+				BD85373E2028EF0A0061175E /* BaseVertexDescriptorLibrary.swift */,
+				BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */,
 				BD96A441203F392500C96D4F /* MeshLibrary.swift */,
 			);
 			path = Libraries;
@@ -490,8 +493,8 @@
 			files = (
 				BD6E2E90203A44150020DD09 /* MyShaders.metal in Sources */,
 				BD6E2E87203A26530020DD09 /* String_Extension.swift in Sources */,
-				BD8537412028EF0A0061175E /* VertexDescriptorLibrary.swift in Sources */,
-				BD96A43C203E8A9A00C96D4F /* ModelLoader.swift in Sources */,
+				BD8537412028EF0A0061175E /* BaseVertexDescriptorLibrary.swift in Sources */,
+				BD96A43C203E8A9A00C96D4F /* MeshLoader.swift in Sources */,
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
 				BDEB5405203B47AD00DE1AEF /* GameManager.swift in Sources */,
 				BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */,
@@ -501,6 +504,7 @@
 				BD96A43A203E88E900C96D4F /* FileHandler.swift in Sources */,
 				BD8537362028EB140061175E /* Primitive.swift in Sources */,
 				BD6E2E86203A26530020DD09 /* Preferences.swift in Sources */,
+				BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */,
 				BD96A442203F392500C96D4F /* MeshLibrary.swift in Sources */,
 				BD8537342028EACB0061175E /* Node.swift in Sources */,
 				BD6E2E83203A26530020DD09 /* Engine.swift in Sources */,
@@ -515,7 +519,7 @@
 				BD99A2512036743400E18569 /* Camera.swift in Sources */,
 				BD853749202901C50061175E /* Renderable.swift in Sources */,
 				BD98C710203BBABA00211D40 /* Mouse.swift in Sources */,
-				BD96A43E203E8AC800C96D4F /* ModelData.swift in Sources */,
+				BD96A43E203E8AC800C96D4F /* MeshData.swift in Sources */,
 				BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */,
 				BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */,
 				BDEB5407203B48D500DE1AEF /* SceneManager.swift in Sources */,

@@ -17,7 +17,7 @@ extension sizeable{
 
 struct Vertex: sizeable {
     var position: float3
-    var color: float4
+    var color: float3
     var normal: float3
     var textureCoordinate: float2
 }

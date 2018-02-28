@@ -47,10 +47,11 @@ class Basic_RenderPipelineState: RenderPipelineState{
     var renderPipelineDescriptor: MTLRenderPipelineDescriptor{
         let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPipelineDescriptor.sampleCount = Engine.mtkView.sampleCount
         renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.MainDepthStencilFormat
         renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Basic_Vertex)
         renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Basic_Fragment)
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.vertexDescriptor(.BASE)
+        renderPipelineDescriptor.vertexDescriptor = BaseVertexDescriptorLibrary.vertexDescriptor(.BASIC)
         return renderPipelineDescriptor
     }
     
@@ -69,7 +70,7 @@ class Textured_RenderPipelineState: RenderPipelineState{
         renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.MainDepthStencilFormat
         renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Textured_Vertex)
         renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Textured_Fragment)
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.vertexDescriptor(.BASE)
+        renderPipelineDescriptor.vertexDescriptor = BaseVertexDescriptorLibrary.vertexDescriptor(.BASIC)
 
         return renderPipelineDescriptor
     }

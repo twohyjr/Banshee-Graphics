@@ -1,35 +1,33 @@
 import MetalKit
 
-enum VertexDescriptorType{
-    case BASE
+enum BaseVertexDescriptorType{
+    case BASIC
 }
 
-class VertexDescriptorLibrary{
+class BaseVertexDescriptorLibrary{
     
-    private static var vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
+    private static var vertexDescriptors: [BaseVertexDescriptorType: BaseVertexDescriptor] = [:]
     
     public static func initialize(){
         setupAllVertexDescriptors()
     }
     
     private static func setupAllVertexDescriptors(){
-        
-        vertexDescriptors.updateValue(Base_VertexDescriptor(), forKey: .BASE)
-        
+        vertexDescriptors.updateValue(Basic_BaseVertexDescriptor(), forKey: .BASIC)
     }
     
-    public static func vertexDescriptor(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
+    public static func vertexDescriptor(_ vertexDescriptorType: BaseVertexDescriptorType)->MTLVertexDescriptor{
         return (vertexDescriptors[vertexDescriptorType]?.vertexDescriptor)!
     }
 }
 
-protocol VertexDescriptor{
+protocol BaseVertexDescriptor{
     var name: String { get }
     var vertexDescriptor: MTLVertexDescriptor { get }
 }
 
-class Base_VertexDescriptor: VertexDescriptor{
-    var name: String = "Base Vertex Descriptor"
+class Basic_BaseVertexDescriptor: BaseVertexDescriptor{
+    var name: String = "Basic Vertex Descriptor"
     var vertexDescriptor: MTLVertexDescriptor{
         let vertexDescriptor = MTLVertexDescriptor()
         
@@ -39,19 +37,19 @@ class Base_VertexDescriptor: VertexDescriptor{
         vertexDescriptor.attributes[0].offset = 0
         
         //Color
-        vertexDescriptor.attributes[1].format = .float4
+        vertexDescriptor.attributes[1].format = .float3
         vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].offset = MemoryLayout<float3>.size
+        vertexDescriptor.attributes[1].offset = MemoryLayout<float3>.stride
         
         //Normal
         vertexDescriptor.attributes[2].format = .float3
         vertexDescriptor.attributes[2].bufferIndex = 0
-        vertexDescriptor.attributes[2].offset =  MemoryLayout<float3>.size + MemoryLayout<float4>.size
+        vertexDescriptor.attributes[2].offset =  MemoryLayout<float3>.stride + MemoryLayout<float3>.stride
         
         //Texture Coordinate
         vertexDescriptor.attributes[3].format = .float2
         vertexDescriptor.attributes[3].bufferIndex = 0
-        vertexDescriptor.attributes[3].offset = MemoryLayout<float3>.size + MemoryLayout<float4>.size +  MemoryLayout<float3>.size
+        vertexDescriptor.attributes[3].offset = MemoryLayout<float3>.stride + MemoryLayout<float3>.stride +  MemoryLayout<float3>.stride
         
         vertexDescriptor.layouts[0].stride = Vertex.stride(1)
         

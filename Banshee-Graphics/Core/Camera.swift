@@ -23,7 +23,21 @@ class Camera{
     }
 
     static func update(){
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_S)){
+            position.z += 0.05
+        }
         
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_W)){
+            position.z -= 0.05
+        }
+        
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_A)){
+            position.x += 0.05
+        }
+        
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_D)){
+            position.x -= 0.05
+        }
     }
 
 }

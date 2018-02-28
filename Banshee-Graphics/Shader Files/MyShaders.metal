@@ -3,7 +3,7 @@ using namespace metal;
 
 struct VertexIn{
     float3 position [[ attribute(0) ]];
-    float4 color [[ attribute(1) ]];
+    float3 color [[ attribute(1) ]];
     float3 normal [[ attribute (2) ]];
     float2 textureCoordinate [[ attribute(3) ]];
 };
@@ -33,7 +33,7 @@ vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
     VertexOut vOut;
     
     vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
-    vOut.color = vIn.color;
+    vOut.color = float4(vIn.color,1);
     vOut.textureCoordinate = vIn.textureCoordinate;
     
     return vOut;
@@ -51,7 +51,7 @@ vertex VertexOut textured_vertex_shader(const VertexIn vIn [[ stage_in ]],
     VertexOut vOut;
     
     vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
-    vOut.color = vIn.color;
+    vOut.color = float4(vIn.color,1);
     vOut.textureCoordinate = vIn.textureCoordinate;
     
     return vOut;
