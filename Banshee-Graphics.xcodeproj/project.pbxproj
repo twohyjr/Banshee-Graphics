@@ -36,8 +36,8 @@
 		BD96A43A203E88E900C96D4F /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A439203E88E900C96D4F /* FileHandler.swift */; };
 		BD96A43C203E8A9A00C96D4F /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43B203E8A9A00C96D4F /* ModelLoader.swift */; };
 		BD96A43E203E8AC800C96D4F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A43D203E8AC800C96D4F /* ModelData.swift */; };
-		BD96A442203F392500C96D4F /* ModelDataLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A441203F392500C96D4F /* ModelDataLibrary.swift */; };
-		BD96A450203F9ED900C96D4F /* BaseModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A44F203F9ED900C96D4F /* BaseModelData.swift */; };
+		BD96A442203F392500C96D4F /* MeshLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A441203F392500C96D4F /* MeshLibrary.swift */; };
+		BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A44F203F9ED900C96D4F /* BaseMeshData.swift */; };
 		BD96A453203FA0BB00C96D4F /* FruitStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96A452203FA0BB00C96D4F /* FruitStand.swift */; };
 		BD98C710203BBABA00211D40 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD98C70F203BBABA00211D40 /* Mouse.swift */; };
 		BD98C712203BBB1B00211D40 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD98C711203BBB1B00211D40 /* Keyboard.swift */; };
@@ -105,8 +105,8 @@
 		BD96A439203E88E900C96D4F /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
 		BD96A43B203E8A9A00C96D4F /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
 		BD96A43D203E8AC800C96D4F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
-		BD96A441203F392500C96D4F /* ModelDataLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataLibrary.swift; sourceTree = "<group>"; };
-		BD96A44F203F9ED900C96D4F /* BaseModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModelData.swift; sourceTree = "<group>"; };
+		BD96A441203F392500C96D4F /* MeshLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshLibrary.swift; sourceTree = "<group>"; };
+		BD96A44F203F9ED900C96D4F /* BaseMeshData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMeshData.swift; sourceTree = "<group>"; };
 		BD96A452203FA0BB00C96D4F /* FruitStand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitStand.swift; sourceTree = "<group>"; };
 		BD98C70F203BBABA00211D40 /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
 		BD98C711203BBB1B00211D40 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		BD96A44E203F9EB900C96D4F /* Model Data */ = {
 			isa = PBXGroup;
 			children = (
-				BD96A44F203F9ED900C96D4F /* BaseModelData.swift */,
+				BD96A44F203F9ED900C96D4F /* BaseMeshData.swift */,
 				BD8537382028EDA20061175E /* Triangle.swift */,
 				BD99A2422034BE4C00E18569 /* Quad.swift */,
 			);
@@ -320,7 +320,7 @@
 				BD85373E2028EF0A0061175E /* VertexDescriptorLibrary.swift */,
 				BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */,
 				BD6E2E8C203A3F840020DD09 /* DepthStencilStateLibrary.swift */,
-				BD96A441203F392500C96D4F /* ModelDataLibrary.swift */,
+				BD96A441203F392500C96D4F /* MeshLibrary.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -501,7 +501,7 @@
 				BD96A43A203E88E900C96D4F /* FileHandler.swift in Sources */,
 				BD8537362028EB140061175E /* Primitive.swift in Sources */,
 				BD6E2E86203A26530020DD09 /* Preferences.swift in Sources */,
-				BD96A442203F392500C96D4F /* ModelDataLibrary.swift in Sources */,
+				BD96A442203F392500C96D4F /* MeshLibrary.swift in Sources */,
 				BD8537342028EACB0061175E /* Node.swift in Sources */,
 				BD6E2E83203A26530020DD09 /* Engine.swift in Sources */,
 				BD6E2E88203A26530020DD09 /* Types.swift in Sources */,
@@ -516,7 +516,7 @@
 				BD853749202901C50061175E /* Renderable.swift in Sources */,
 				BD98C710203BBABA00211D40 /* Mouse.swift in Sources */,
 				BD96A43E203E8AC800C96D4F /* ModelData.swift in Sources */,
-				BD96A450203F9ED900C96D4F /* BaseModelData.swift in Sources */,
+				BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */,
 				BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */,
 				BDEB5407203B48D500DE1AEF /* SceneManager.swift in Sources */,
 				BDEB540A203B50E700DE1AEF /* Scene_Basic.swift in Sources */,

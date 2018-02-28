@@ -16,7 +16,7 @@ class Primitive : Node{
 //
 //    }
     
-    init(modelDataType: ModelDataTypes, textureName: String = String.Empty){
+    init(modelDataType: MeshTypes, textureName: String = String.Empty){
         super.init()
         setTexture(textureName)
         buildVertices(modelDataType: modelDataType)
@@ -29,8 +29,8 @@ class Primitive : Node{
         }
     }
 
-    public func buildVertices(modelDataType: ModelDataTypes){
-        let modelData = ModelDataLibrary.modelData(modelDataType)
+    public func buildVertices(modelDataType: MeshTypes){
+        let modelData = MeshLibrary.mesh(modelDataType)
         vertices = modelData.vertices
         indices = modelData.indices
     }

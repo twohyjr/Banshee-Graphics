@@ -16,7 +16,7 @@ class Engine {
         self.library = device.makeDefaultLibrary()
         self.renderer = Renderer()
         
-        ModelDataLibrary.initialize()
+        MeshLibrary.initialize()
         
         SceneManager.initialize(startingSceneType: .Basic)
         
