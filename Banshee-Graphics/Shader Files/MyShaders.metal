@@ -39,6 +39,18 @@ vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
     return vOut;
 }
 
+vertex VertexOut instanced_vertex_shader(const VertexIn vIn [[ stage_in ]],
+                                        constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                        constant ModelConstants *instances [[ buffer(2) ]],
+                                        uint instanceId [[ instance_id ]]) {
+    ModelConstants modelConstants = instances[instanceId];
+    VertexOut vOut;
+    vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
+    vOut.color = float4(vIn.color,1);
+    vOut.textureCoordinate = vIn.textureCoordinate;
+    return vOut;
+}
+
 fragment half4 basic_fragment_shader(const VertexOut vIn [[ stage_in ]]){
     float4 color = vIn.color;
     return half4(color.r, color.g, color.b, color.a);

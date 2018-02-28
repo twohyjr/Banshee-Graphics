@@ -31,7 +31,6 @@ class MeshLoader {
         let asset = MDLAsset(url: assetURL,
                              vertexDescriptor: MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC),
                              bufferAllocator: bufferAllocator)
-        
         return getMeshData(mdlAsset: asset)
     }
     
@@ -122,6 +121,7 @@ class MeshLoader {
     ///Input is a obj file model
     private static func getMeshData(mdlAsset: MDLAsset)->MeshData{
         let meshData = MeshData()
+        meshData.boundingBox = mdlAsset.boundingBox
         do{
             let meshes = try MTKMesh.newMeshes(asset: mdlAsset, device: Engine.device).metalKitMeshes
             meshData.vertexBuffer = meshes[0].vertexBuffers[0].buffer
@@ -140,6 +140,7 @@ class MeshLoader {
     ///Input is an apple designed mesh object
     private static func getMeshData(mdlMesh: MDLMesh)->MeshData{
         let meshData = MeshData()
+        meshData.boundingBox = mdlMesh.boundingBox
         do {
             let mtkMesh = try MTKMesh(mesh: mdlMesh, device: Engine.device)
             let mtkVertexBuffer = mtkMesh.vertexBuffers[0]

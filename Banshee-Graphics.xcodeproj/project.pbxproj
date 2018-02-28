@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */; };
 		BD5E722E20466A6B00901029 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722D20466A6B00901029 /* Sun.swift */; };
+		BD5E72302047278600901029 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722F2047278600901029 /* Instance.swift */; };
 		BD6E2E83203A26530020DD09 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7D203A26520020DD09 /* Engine.swift */; };
 		BD6E2E84203A26530020DD09 /* MathUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7E203A26520020DD09 /* MathUtils.swift */; };
 		BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshVertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		BD5E722D20466A6B00901029 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
+		BD5E722F2047278600901029 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
 		BD6E2E7D203A26520020DD09 /* Engine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		BD6E2E7E203A26520020DD09 /* MathUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathUtils.swift; sourceTree = "<group>"; };
 		BD6E2E7F203A26520020DD09 /* Matrix_Float4_Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix_Float4_Extension.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				BD8537352028EB140061175E /* Primitive.swift */,
+				BD5E722F2047278600901029 /* Instance.swift */,
 				BD96A44E203F9EB900C96D4F /* Model Data */,
 			);
 			path = Primitives;
@@ -522,6 +525,7 @@
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 				BD99A2512036743400E18569 /* Camera.swift in Sources */,
 				BD853749202901C50061175E /* Renderable.swift in Sources */,
+				BD5E72302047278600901029 /* Instance.swift in Sources */,
 				BD98C710203BBABA00211D40 /* Mouse.swift in Sources */,
 				BD96A43E203E8AC800C96D4F /* MeshData.swift in Sources */,
 				BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */,

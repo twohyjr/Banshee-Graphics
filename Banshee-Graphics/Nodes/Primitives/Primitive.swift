@@ -5,6 +5,9 @@ class Primitive : Node{
     var meshData: MeshData!
     var texture: MTLTexture!
     var modelConstants = ModelConstants()
+    var boundingBox: MDLAxisAlignedBoundingBox?{
+        return meshData.boundingBox != nil ? meshData.boundingBox : nil
+    }
     
     init(baseMeshType: MeshDataTypes, textureName: String = String.Empty){
         super.init()
@@ -17,10 +20,6 @@ class Primitive : Node{
             texture = generateTexture(textureName: textureName)
         }
     }
-
-    public func buildVertices(){ }
-    
-    public func buildIndices(){ }
 
     private func setModelConstants(_ renderCommandEncoder: MTLRenderCommandEncoder){
         modelConstants.model_matrix = modelMatrix
@@ -58,7 +57,6 @@ extension Primitive: Renderable{
         }else{
             renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
         }
-
     }
 }
 

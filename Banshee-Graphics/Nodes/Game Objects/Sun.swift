@@ -1,9 +1,9 @@
 import MetalKit
 
-class Sun: Primitive {
+class Sun: Instance {
     
     init(){
-        super.init(baseMeshType: .SPHERE_APPLE, textureName: "stallTexture.png")
+        super.init(meshData: MeshLibrary.mesh(.FRUIT_STAND), instanceCount: 1, textureName: "stallTexture.png")
         rotation = float3(0.15, 4.05, 0.0)
     }
     
