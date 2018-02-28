@@ -1,6 +1,7 @@
 import MetalKit
 
 class Triangle: BaseMeshData {
+    var meshDataType: MeshDataTypes = MeshDataTypes.TRIANGLE
     var primitiveType: MTLPrimitiveType = MTLPrimitiveType.triangle
     var indexType: MTLIndexType = MTLIndexType.uint32
 

@@ -2,92 +2,103 @@ import MetalKit
 
 class MeshLoader {
     
-    public static func LoadMeshDataFromWavefront(modelName: String)->MeshData{
+    //--------------------------------------------------------------------------------------------
+    //------ Custom Model ---------------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------
+    public static func LoadCustomMeshData(baseMeshData: BaseMeshData)->MeshData{
+        return getMeshData(baseMeshData: baseMeshData)
+    }
+    
+    //--------------------------------------------------------------------------------------------
+    //------ Apple Designed Models ------------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------
+    public static func LoadAppleDesignedMeshData(appleDesignedMeshType: AppleDesignedMeshTypes)->MeshData{
         var meshData = MeshData()
-//--------------------------------------------------------------------------------------------
-//------ Custom Model ---------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------
-        let baseData: BaseMeshData = Quad()
-        meshData = getMeshData(baseMeshData: baseData)
         
+        let bufferAllocator = MTKMeshBufferAllocator(device: Engine.device)
+        var mdlMesh: MDLMesh!
+        switch appleDesignedMeshType {
+        case .PLANE:
+            mdlMesh = MDLMesh(planeWithExtent: vector_float3(1, 1, 1),
+                                                   segments: vector_uint2(100, 100),
+                                                   geometryType: .triangleStrips,
+                                                   allocator: bufferAllocator)
+        }
+        //        //----PLANE-----
+        //        let mdlMesh: MDLMesh = MDLMesh(planeWithExtent: vector_float3(1, 1, 1),
+        //                                       segments: vector_uint2(100, 100),
+        //                                       geometryType: .triangleStrips,
+        //                                       allocator: bufferAllocator)
+        //
+        //        //----CONE-----
+        //        let mdlMesh: MDLMesh = MDLMesh(coneWithExtent: vector_float3(1,1,1),
+        //                                       segments: vector_uint2(100,100),
+        //                                       inwardNormals: false,
+        //                                       cap: false,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+        //
+        //        //----SPHERE-----
+        //        let mdlMesh: MDLMesh = MDLMesh(sphereWithExtent: vector_float3(1,1,1),
+        //                                       segments: vector_uint2(100,100),
+        //                                       inwardNormals: false,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+        //
+        //        //----ICOSAHEDRON-----
+        //        let mdlMesh: MDLMesh = MDLMesh(icosahedronWithExtent: vector_float3(1,1,1),
+        //                                       inwardNormals: false,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+        //        //----CAPSULE-----
+        //       let mdlMesh: MDLMesh = MDLMesh(capsuleWithExtent: vector_float3(1,1,1),
+        //                                      cylinderSegments: vector_uint2(100,100),
+        //                                      hemisphereSegments: 100,
+        //                                      inwardNormals: false,
+        //                                      geometryType: .triangles,
+        //                                      allocator: bufferAllocator)
+        //        //----CYLINDER-----
+        //        let mdlMesh: MDLMesh = MDLMesh(cylinderWithExtent: vector_float3(1,1,1),
+        //                                       segments: vector_uint2(100,100),
+        //                                       inwardNormals: false,
+        //                                       topCap: false,
+        //                                       bottomCap: false,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+        //        //----HEMISPHERE-----
+        //        let mdlMesh: MDLMesh = MDLMesh(hemisphereWithExtent: vector_float3(1,1,1),
+        //                                       segments: vector_uint2(100,100),
+        //                                       inwardNormals: false,
+        //                                       cap: true,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+        //      //----CUBE-----
+        //      let mdlMesh: MDLMesh = MDLMesh(boxWithExtent: vector_float3(1,1,1),
+        //                                       segments: vector_uint3(100,100,100),
+        //                                       inwardNormals: false,
+        //                                       geometryType: .triangles,
+        //                                       allocator: bufferAllocator)
+
+        mdlMesh.vertexDescriptor = MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC)
+        meshData = getMeshData(mdlMesh: mdlMesh)
         
-//--------------------------------------------------------------------------------------------
-//------ Apple Designed Models ------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------
-//        let bufferAllocator = MTKMeshBufferAllocator(device: Engine.device)
-//        //----PLANE-----
-//        let mdlMesh: MDLMesh = MDLMesh(planeWithExtent: vector_float3(1, 1, 1),
-//                                       segments: vector_uint2(100, 100),
-//                                       geometryType: .triangleStrips,
-//                                       allocator: bufferAllocator)
-//
-//        //----CONE-----
-//        let mdlMesh: MDLMesh = MDLMesh(coneWithExtent: vector_float3(1,1,1),
-//                                       segments: vector_uint2(100,100),
-//                                       inwardNormals: false,
-//                                       cap: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//
-//        //----SPHERE-----
-//        let mdlMesh: MDLMesh = MDLMesh(sphereWithExtent: vector_float3(1,1,1),
-//                                       segments: vector_uint2(100,100),
-//                                       inwardNormals: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//
-//        //----ICOSAHEDRON-----
-//        let mdlMesh: MDLMesh = MDLMesh(icosahedronWithExtent: vector_float3(1,1,1),
-//                                       inwardNormals: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//        //----CAPSULE-----
-//        let mdlMesh: MDLMesh = MDLMesh(capsuleWithExtent: vector_float3(1,1,1),
-//                                       cylinderSegments: vector_uint2(100,100),
-//                                       hemisphereSegments: 100,
-//                                       inwardNormals: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//        //----CYLINDER-----
-//        let mdlMesh: MDLMesh = MDLMesh(cylinderWithExtent: vector_float3(1,1,1),
-//                                       segments: vector_uint2(100,100),
-//                                       inwardNormals: false,
-//                                       topCap: false,
-//                                       bottomCap: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//        //----HEMISPHERE-----
-//        let mdlMesh: MDLMesh = MDLMesh(hemisphereWithExtent: vector_float3(1,1,1),
-//                                       segments: vector_uint2(100,100),
-//                                       inwardNormals: false,
-//                                       cap: true,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//      //----CUBE-----
-//        let mdlMesh: MDLMesh = MDLMesh(boxWithExtent: vector_float3(1,1,1),
-//                                       segments: vector_uint3(100,100,100),
-//                                       inwardNormals: false,
-//                                       geometryType: .triangles,
-//                                       allocator: bufferAllocator)
-//
-//        mdlMesh.vertexDescriptor = MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC)
-//        meshData = getMeshData(mdlMesh: mdlMesh)
-        
-        
-//--------------------------------------------------------------------------------------------
-//------ Wavefront Model (OBJ File) -------------------------------------------------------------
-//--------------------------------------------------------------------------------------------
-//        let bufferAllocator = MTKMeshBufferAllocator(device: Engine.device)
-//        guard let assetURL = Bundle.main.url(forResource: modelName, withExtension: "obj") else {
-//            fatalError("Asset \(modelName) does not exist.")
-//        }
-//        let asset = MDLAsset(url: assetURL,
-//                             vertexDescriptor: MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC),
-//                             bufferAllocator: bufferAllocator)
-//
-//        meshData = getMeshData(mdlAsset: asset)
-//--------------------------------------------------------------------------------------------
         return meshData
+    }
+    
+    
+    //--------------------------------------------------------------------------------------------
+    //------ Wavefront Model (OBJ File) -------------------------------------------------------------
+    //--------------------------------------------------------------------------------------------
+    public static func LoadMeshDataFromWavefront(modelName: String)->MeshData{
+        let bufferAllocator = MTKMeshBufferAllocator(device: Engine.device)
+        guard let assetURL = Bundle.main.url(forResource: modelName, withExtension: "obj") else {
+            fatalError("Asset \(modelName) does not exist.")
+        }
+        let asset = MDLAsset(url: assetURL,
+                             vertexDescriptor: MeshVertexDescriptorLibrary.vertexDescriptor(.BASIC),
+                             bufferAllocator: bufferAllocator)
+
+        return getMeshData(mdlAsset: asset)
     }
     
     ///Input is a custom model

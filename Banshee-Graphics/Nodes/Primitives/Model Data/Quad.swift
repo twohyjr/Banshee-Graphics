@@ -1,6 +1,7 @@
 import MetalKit
 
 class Quad: BaseMeshData {
+    var meshDataType: MeshDataTypes = MeshDataTypes.QUAD
     var primitiveType: MTLPrimitiveType = MTLPrimitiveType.triangle
     var indexType: MTLIndexType = MTLIndexType.uint32
     var vertices: [Vertex]! = [

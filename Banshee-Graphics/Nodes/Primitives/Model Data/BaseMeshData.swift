@@ -1,6 +1,7 @@
 import MetalKit
 
 protocol BaseMeshData {
+    var meshDataType: MeshDataTypes { get }
     var vertices: [Vertex]! { get set }
     var indices: [UInt32]! { get set }
     var primitiveType: MTLPrimitiveType { get }

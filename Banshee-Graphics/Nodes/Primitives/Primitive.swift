@@ -6,10 +6,10 @@ class Primitive : Node{
     var texture: MTLTexture!
     var modelConstants = ModelConstants()
     
-    init(textureName: String = String.Empty){
+    init(baseMeshType: MeshDataTypes, textureName: String = String.Empty){
         super.init()
         setTexture(textureName)
-        meshData = MeshLoader.LoadMeshDataFromWavefront(modelName: "stall")
+        meshData = MeshLibrary.mesh(baseMeshType)
     }
     
     private func setTexture(_ textureName: String){

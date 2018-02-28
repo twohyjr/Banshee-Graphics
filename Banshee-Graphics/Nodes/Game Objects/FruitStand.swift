@@ -3,7 +3,8 @@ import MetalKit
 class FruitStand: Primitive {
 
     init(){
-        super.init(textureName: "stallTexture.png")
+        super.init(baseMeshType: .FRUIT_STAND, textureName: "stallTexture.png")
+        rotation = float3(0.15, 4.05, 0.0)
     }
     
     override func tick() {
