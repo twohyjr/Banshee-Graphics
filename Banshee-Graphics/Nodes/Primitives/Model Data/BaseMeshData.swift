@@ -6,6 +6,8 @@ protocol BaseMeshData {
     var indices: [UInt32]! { get set }
     var primitiveType: MTLPrimitiveType { get }
     var indexType: MTLIndexType { get }
+    var mins: float3 { get }
+    var maxs: float3 { get }
 }
 
 extension BaseMeshData{

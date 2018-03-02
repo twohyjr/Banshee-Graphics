@@ -1,13 +1,10 @@
 import MetalKit
 
 class Armadillo: Primitive {
-
+    
     init(){
-//        super.init(modelDataType: .STALL, textureName: "stallTexture.png")
-        super.init(modelDataType: .ARMADILLO)
-//        self.rotation.y = 3.5
-//        self.rotation.x = 0.4
-//        self.position.y = -2
+        super.init(baseMeshType: .ARMADILLO)
+        rotation = float3(0.15, 4.05, 0.0)
     }
     
     override func tick() {

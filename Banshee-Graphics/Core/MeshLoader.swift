@@ -115,6 +115,8 @@ class MeshLoader {
         meshData.indexCount = baseMeshData.indexCount
         meshData.indexType = baseMeshData.indexType
         meshData.vertexCount = baseMeshData.vertexCount
+        meshData.boundingBox = MDLAxisAlignedBoundingBox(maxBounds: vector_float3(baseMeshData.maxs.x, baseMeshData.maxs.y, baseMeshData.maxs.z),
+                                                         minBounds: vector_float3(baseMeshData.mins.x, baseMeshData.mins.y, baseMeshData.mins.z))
         return meshData
     }
     

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3EB0992048FA48001FB7D9 /* armadillo.obj in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB0982048FA47001FB7D9 /* armadillo.obj */; };
+		BD3EB09B2048FAE3001FB7D9 /* Armadillo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3EB09A2048FAE3001FB7D9 /* Armadillo.swift */; };
 		BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */; };
 		BD5E722E20466A6B00901029 /* Sun.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722D20466A6B00901029 /* Sun.swift */; };
 		BD5E72302047278600901029 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722F2047278600901029 /* Instance.swift */; };
@@ -49,6 +51,7 @@
 		BD99A2472034C07900E18569 /* colors.png in Resources */ = {isa = PBXBuildFile; fileRef = BD99A2462034C07900E18569 /* colors.png */; };
 		BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */; };
 		BD99A2512036743400E18569 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2502036743400E18569 /* Camera.swift */; };
+		BD9F4437204887D8004EB7C7 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F4436204887D8004EB7C7 /* BoundingBox.swift */; };
 		BDEB5405203B47AD00DE1AEF /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5404203B47AD00DE1AEF /* GameManager.swift */; };
 		BDEB5407203B48D500DE1AEF /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5406203B48D500DE1AEF /* SceneManager.swift */; };
 		BDEB540A203B50E700DE1AEF /* Scene_Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5409203B50E700DE1AEF /* Scene_Basic.swift */; };
@@ -72,6 +75,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD3EB0982048FA47001FB7D9 /* armadillo.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = armadillo.obj; path = "../../../../Twohys Game Engine/Twohys Game Engine/Assets/Models/armadillo.obj"; sourceTree = "<group>"; };
+		BD3EB09A2048FAE3001FB7D9 /* Armadillo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armadillo.swift; sourceTree = "<group>"; };
 		BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshVertexDescriptorLibrary.swift; sourceTree = "<group>"; };
 		BD5E722D20466A6B00901029 /* Sun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sun.swift; sourceTree = "<group>"; };
 		BD5E722F2047278600901029 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
@@ -121,6 +126,7 @@
 		BD99A2462034C07900E18569 /* colors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colors.png; sourceTree = "<group>"; };
 		BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerStateLibrary.swift; sourceTree = "<group>"; };
 		BD99A2502036743400E18569 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		BD9F4436204887D8004EB7C7 /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		BDEB5404203B47AD00DE1AEF /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		BDEB5406203B48D500DE1AEF /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		BDEB5409203B50E700DE1AEF /* Scene_Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene_Basic.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 			children = (
 				BD8537352028EB140061175E /* Primitive.swift */,
 				BD5E722F2047278600901029 /* Instance.swift */,
+				BD9F4436204887D8004EB7C7 /* BoundingBox.swift */,
 				BD96A44E203F9EB900C96D4F /* Model Data */,
 			);
 			path = Primitives;
@@ -305,6 +312,7 @@
 		BD96A451203FA0A600C96D4F /* Game Objects */ = {
 			isa = PBXGroup;
 			children = (
+				BD3EB09A2048FAE3001FB7D9 /* Armadillo.swift */,
 				BD96A452203FA0BB00C96D4F /* FruitStand.swift */,
 				BD5E722D20466A6B00901029 /* Sun.swift */,
 			);
@@ -346,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				BD96A41E203DF20C00C96D4F /* stall.obj */,
+				BD3EB0982048FA47001FB7D9 /* armadillo.obj */,
 				BD96A420203DF6C900C96D4F /* stallTexture.png */,
 				BD99A2462034C07900E18569 /* colors.png */,
 			);
@@ -471,6 +480,7 @@
 				BD99A2472034C07900E18569 /* colors.png in Resources */,
 				BD96A421203DF6CA00C96D4F /* stallTexture.png in Resources */,
 				BD8536DF2028BC760061175E /* Assets.xcassets in Resources */,
+				BD3EB0992048FA48001FB7D9 /* armadillo.obj in Resources */,
 				BD96A41F203DF20C00C96D4F /* stall.obj in Resources */,
 				BD8536E22028BC760061175E /* Main.storyboard in Resources */,
 			);
@@ -504,6 +514,7 @@
 				BD8536DD2028BC760061175E /* Banshee_Graphics.xcdatamodeld in Sources */,
 				BDEB5405203B47AD00DE1AEF /* GameManager.swift in Sources */,
 				BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */,
+				BD3EB09B2048FAE3001FB7D9 /* Armadillo.swift in Sources */,
 				BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */,
 				BD8537172028C6F60061175E /* GameView.swift in Sources */,
 				BD6E2E84203A26530020DD09 /* MathUtils.swift in Sources */,
@@ -521,6 +532,7 @@
 				BD6E2E8D203A3F840020DD09 /* DepthStencilStateLibrary.swift in Sources */,
 				BD8537392028EDA20061175E /* Triangle.swift in Sources */,
 				BD5E722E20466A6B00901029 /* Sun.swift in Sources */,
+				BD9F4437204887D8004EB7C7 /* BoundingBox.swift in Sources */,
 				BD99A2432034BE4C00E18569 /* Quad.swift in Sources */,
 				BD8537282028D9CF0061175E /* Scene.swift in Sources */,
 				BD99A2512036743400E18569 /* Camera.swift in Sources */,

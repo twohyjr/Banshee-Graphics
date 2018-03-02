@@ -8,6 +8,7 @@ enum MeshDataTypes{
     
     //Wavefront file types
     case FRUIT_STAND
+    case ARMADILLO
     
     //Apple Desinged Types
     case PLANE_APPLE
@@ -35,6 +36,7 @@ class MeshLibrary {
         
         //Wavefront OBJ Meshes
         addWavefrontMesh(modelName: "stall", meshDataType: .FRUIT_STAND)
+        addWavefrontMesh(modelName: "armadillo", meshDataType: .ARMADILLO)
         
         //Apple Meshes
         addAppleDesignedMesh(appleDesignedMeshType: .PLANE, meshDataType: .PLANE_APPLE)

@@ -5,8 +5,12 @@ class Primitive : Node{
     var meshData: MeshData!
     var texture: MTLTexture!
     var modelConstants = ModelConstants()
-    var boundingBox: MDLAxisAlignedBoundingBox?{
-        return meshData.boundingBox != nil ? meshData.boundingBox : nil
+    var _boundingBox: BoundingBox!
+    var boundingBox: BoundingBox?{
+        if(_boundingBox == nil){
+            _boundingBox = BoundingBox(mins: meshData.boundingBox.minBounds, maxs: meshData.boundingBox.maxBounds)
+        }
+        return _boundingBox
     }
     
     init(baseMeshType: MeshDataTypes, textureName: String = String.Empty){
@@ -45,7 +49,6 @@ extension Primitive: Renderable{
         }
         
         renderCommandEncoder.setFrontFacing(.counterClockwise)
-        renderCommandEncoder.setRenderPipelineState(renderPipelineState)
         renderCommandEncoder.setVertexBuffer(meshData.vertexBuffer, offset:0, index:0)
         
         if(meshData.indexCount > 0){
@@ -57,6 +60,8 @@ extension Primitive: Renderable{
         }else{
             renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
         }
+        
+        boundingBox?.draw(renderCommandEncoder, modelConstants: modelConstants)
     }
 }
 

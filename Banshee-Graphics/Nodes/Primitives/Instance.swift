@@ -7,6 +7,13 @@ class Instance: Node {
     var instanceConstants: [ModelConstants] = []
     var instanceBuffer: MTLBuffer!
     var texture: MTLTexture!
+    var _boundingBox: BoundingBox!
+    var boundingBox: BoundingBox?{
+        if(_boundingBox == nil){
+            _boundingBox = BoundingBox(mins: meshData.boundingBox.minBounds, maxs: meshData.boundingBox.maxBounds)
+        }
+        return _boundingBox
+    }
     
     init(meshData: MeshData, instanceCount: Int, textureName: String = String.Empty) {
         super.init()
