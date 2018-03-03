@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD226F942049CF1900A52153 /* BoundingSphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD226F932049CF1900A52153 /* BoundingSphere.swift */; };
 		BD3EB0992048FA48001FB7D9 /* armadillo.obj in Resources */ = {isa = PBXBuildFile; fileRef = BD3EB0982048FA47001FB7D9 /* armadillo.obj */; };
 		BD3EB09B2048FAE3001FB7D9 /* Armadillo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3EB09A2048FAE3001FB7D9 /* Armadillo.swift */; };
 		BD5E722C2046480800901029 /* MeshVertexDescriptorLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD226F932049CF1900A52153 /* BoundingSphere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingSphere.swift; sourceTree = "<group>"; };
 		BD3EB0982048FA47001FB7D9 /* armadillo.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = armadillo.obj; path = "../../../../Twohys Game Engine/Twohys Game Engine/Assets/Models/armadillo.obj"; sourceTree = "<group>"; };
 		BD3EB09A2048FAE3001FB7D9 /* Armadillo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armadillo.swift; sourceTree = "<group>"; };
 		BD5E722B2046480800901029 /* MeshVertexDescriptorLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshVertexDescriptorLibrary.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				BD8537352028EB140061175E /* Primitive.swift */,
 				BD5E722F2047278600901029 /* Instance.swift */,
 				BD9F4436204887D8004EB7C7 /* BoundingBox.swift */,
+				BD226F932049CF1900A52153 /* BoundingSphere.swift */,
 				BD96A44E203F9EB900C96D4F /* Model Data */,
 			);
 			path = Primitives;
@@ -516,6 +519,7 @@
 				BD6E2E85203A26530020DD09 /* Matrix_Float4_Extension.swift in Sources */,
 				BD3EB09B2048FAE3001FB7D9 /* Armadillo.swift in Sources */,
 				BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */,
+				BD226F942049CF1900A52153 /* BoundingSphere.swift in Sources */,
 				BD8537172028C6F60061175E /* GameView.swift in Sources */,
 				BD6E2E84203A26530020DD09 /* MathUtils.swift in Sources */,
 				BD96A43A203E88E900C96D4F /* FileHandler.swift in Sources */,

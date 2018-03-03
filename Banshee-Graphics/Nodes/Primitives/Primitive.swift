@@ -5,6 +5,14 @@ class Primitive : Node{
     var meshData: MeshData!
     var texture: MTLTexture!
     var modelConstants = ModelConstants()
+    var _boundingSphere: BoundingSphere!
+    var boundingSphere: BoundingSphere?{
+        if(_boundingSphere == nil){
+            _boundingSphere = BoundingSphere(mins: meshData.boundingBox.minBounds, maxs: meshData.boundingBox.maxBounds)
+        }
+        return  _boundingSphere
+    }
+    
     var _boundingBox: BoundingBox!
     var boundingBox: BoundingBox?{
         if(_boundingBox == nil){
@@ -61,7 +69,7 @@ extension Primitive: Renderable{
             renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
         }
         
-        boundingBox?.draw(renderCommandEncoder, modelConstants: modelConstants)
+        boundingSphere?.draw(renderCommandEncoder, modelConstants: modelConstants)
     }
 }
 

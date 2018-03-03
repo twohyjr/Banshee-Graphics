@@ -123,6 +123,7 @@ class MeshLoader {
     ///Input is a obj file model
     private static func getMeshData(mdlAsset: MDLAsset)->MeshData{
         let meshData = MeshData()
+        meshData.boundingSphere = BoundingSphere(mins: mdlAsset.boundingBox.minBounds, maxs: mdlAsset.boundingBox.maxBounds)
         meshData.boundingBox = mdlAsset.boundingBox
         do{
             let meshes = try MTKMesh.newMeshes(asset: mdlAsset, device: Engine.device).metalKitMeshes

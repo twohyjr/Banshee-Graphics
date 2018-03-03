@@ -9,4 +9,5 @@ class MeshData {
     var vertexCount: Int!
     var indexType: MTLIndexType!
     var boundingBox: MDLAxisAlignedBoundingBox!
+    var boundingSphere: BoundingSphere!
 }
