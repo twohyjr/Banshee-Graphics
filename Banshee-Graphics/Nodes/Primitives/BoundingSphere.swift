@@ -13,6 +13,7 @@ class BoundingSphere: Node {
     
     init(mins: vector_float3, maxs: vector_float3) {
         super.init()
+        buildVisual()
         radius = getRadius(mins: mins, maxs: maxs)
         centerPoint = getCenterPoint(mins: mins, maxs: maxs)
     }
@@ -60,7 +61,7 @@ extension BoundingSphere: Renderable{
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 2)
         renderCommandEncoder.setFrontFacing(.counterClockwise)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset:0, index:0)
-        renderCommandEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertices.count)
+        renderCommandEncoder.drawPrimitives(type: .lineStrip, vertexStart: 0, vertexCount: vertices.count)
     }
     
     var renderPipelineState: MTLRenderPipelineState! {
