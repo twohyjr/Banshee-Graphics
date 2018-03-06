@@ -13,7 +13,9 @@ class Math{
     }
     
     public static func toRadians(_ degrees: Float) -> Float{
-        return (degrees / 180) * Float.pi
+        //degrees × π / 180°
+        return degrees * Float.pi / 180.0
+        
     }
     
     public static func toDegrees(_ radians: Float) -> Float{

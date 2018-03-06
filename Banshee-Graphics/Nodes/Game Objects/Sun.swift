@@ -1,15 +1,29 @@
 import MetalKit
 
-class Sun: Instance {
+class Sun: Primitive {
     
     init(){
-        super.init(meshData: MeshLibrary.mesh(.SPHERE_APPLE), instanceCount: 1000, textureName: "stallTexture.png")
-        var count: Float = 0.0
-        for i in self.nodes{
-            i.rotation.y = count
-            count += 0.03
+        super.init(baseMeshType: .SPHERE_APPLE)
+        scale = float3(0.95)
+        
+    }
+    
+    override func tick() {
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Left)){
+            rotation.y += 0.05
         }
-        rotation = float3(0.15, 4.05, 0.0)
+        
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Right)){
+            rotation.y -= 0.05
+        }
+        
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Up)){
+            rotation.x += 0.05
+        }
+        
+        if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Down)){
+            rotation.x -= 0.05
+        }
     }
 }
 

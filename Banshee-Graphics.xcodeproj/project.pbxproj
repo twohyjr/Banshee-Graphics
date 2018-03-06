@@ -53,7 +53,6 @@
 		BD99A24B2034C39800E18569 /* SamplerStateLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */; };
 		BD99A2512036743400E18569 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99A2502036743400E18569 /* Camera.swift */; };
 		BD9F4437204887D8004EB7C7 /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9F4436204887D8004EB7C7 /* BoundingBox.swift */; };
-		BDC2D2FA204CCC43000857ED /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2D2F9204CCC43000857ED /* Circle.swift */; };
 		BDEB5405203B47AD00DE1AEF /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5404203B47AD00DE1AEF /* GameManager.swift */; };
 		BDEB5407203B48D500DE1AEF /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5406203B48D500DE1AEF /* SceneManager.swift */; };
 		BDEB540A203B50E700DE1AEF /* Scene_Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB5409203B50E700DE1AEF /* Scene_Basic.swift */; };
@@ -130,7 +129,6 @@
 		BD99A24A2034C39800E18569 /* SamplerStateLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SamplerStateLibrary.swift; sourceTree = "<group>"; };
 		BD99A2502036743400E18569 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		BD9F4436204887D8004EB7C7 /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
-		BDC2D2F9204CCC43000857ED /* Circle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		BDEB5404203B47AD00DE1AEF /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		BDEB5406203B48D500DE1AEF /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		BDEB5409203B50E700DE1AEF /* Scene_Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene_Basic.swift; sourceTree = "<group>"; };
@@ -291,7 +289,6 @@
 				BD9F4436204887D8004EB7C7 /* BoundingBox.swift */,
 				BD226F932049CF1900A52153 /* BoundingSphere.swift */,
 				BD96A44E203F9EB900C96D4F /* Model Data */,
-				BDC2D2F9204CCC43000857ED /* Circle.swift */,
 			);
 			path = Primitives;
 			sourceTree = "<group>";
@@ -547,7 +544,6 @@
 				BD5E72302047278600901029 /* Instance.swift in Sources */,
 				BD98C710203BBABA00211D40 /* Mouse.swift in Sources */,
 				BD96A43E203E8AC800C96D4F /* MeshData.swift in Sources */,
-				BDC2D2FA204CCC43000857ED /* Circle.swift in Sources */,
 				BD96A450203F9ED900C96D4F /* BaseMeshData.swift in Sources */,
 				BD8537402028EF0A0061175E /* ShaderFunctionLibrary.swift in Sources */,
 				BDEB5407203B48D500DE1AEF /* SceneManager.swift in Sources */,

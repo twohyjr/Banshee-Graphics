@@ -1,43 +1,33 @@
 import MetalKit
 
 class BoundingSphere: Node {
-    
-    //distance = sqrt(((p1x – p2x) * (p1x – p2x)) + ((p1y – p2y) * (p1y – p2y)) + ((p1z – p2z) * (p1z – p2z)));
     var modelConstants = ModelConstants()
     var vertices: [Vertex] = []
+    var indices: [UInt32] = []
     var vertexBuffer: MTLBuffer!
-
+    var indexBuffer: MTLBuffer!
     var radius: Float = 0
-    var centerPoint = float3(0)
+    //    var color:
     
-    
-    init(mins: vector_float3, maxs: vector_float3) {
+    init(mins: vector_float3, maxs: vector_float3, color: float3 = float3(1, 0, 0)) {
         super.init()
-        buildVisual()
-        radius = getRadius(mins: mins, maxs: maxs)
-        centerPoint = getCenterPoint(mins: mins, maxs: maxs)
-    }
-    
-    func buildVisual(){
         let trianglesPerSection: Int = 100
-        var lastPos: float2 = float2(0)
-        
-        for i in (0 ... trianglesPerSection).reversed() {
-            let red = Float(CGFloat(Float(arc4random()) / Float(UINT32_MAX)))
-            let green = Float(CGFloat(Float(arc4random()) / Float(UINT32_MAX)))
-            let blue = Float(CGFloat(Float(arc4random()) / Float(UINT32_MAX)))
-            
+        radius = getRadius(mins: mins, maxs: maxs)
+        for i in (0 ... trianglesPerSection) {
             let val: Float = i == 0 ? 0 :  Float((360.0 / Double(trianglesPerSection)) * Double(i))
             var pos = float2(cos(Math.toRadians(val)), sin(Math.toRadians(val))) * radius
-            
-            vertices.append(Vertex(position: float3(0, 0, 0), color: float3(red, green, blue), normal: float3(0,0,1), textureCoordinate: float2(0,1)))
-            vertices.append(Vertex(position: float3(pos.x, pos.y, 0), color: float3(red, green, blue), normal: float3(0,0,1), textureCoordinate: float2(0,1)))
-            vertices.append(Vertex(position: float3(lastPos.x, lastPos.y, 0), color: float3(red, green, blue), normal: float3(0,0,1), textureCoordinate: float2(0,1)))
-            lastPos = pos
+            vertices.append(Vertex(position: float3(pos.x, pos.y, 0), color: color, normal: float3(0,0,1), textureCoordinate: float2(0,1)))
         }
-        vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
         
+        for i in (0 ... trianglesPerSection) {
+            let val: Float = i == 0 ? 0 :  Float((360.0 / Double(trianglesPerSection)) * Double(i))
+            var pos = float2(cos(Math.toRadians(val)), sin(Math.toRadians(val))) * radius
+            vertices.append(Vertex(position: float3(pos.x, 0, pos.y), color: color, normal: float3(0,0,1), textureCoordinate: float2(0,1)))
+        }
+        
+        vertexBuffer = Engine.device.makeBuffer(bytes: vertices, length: Vertex.stride(vertices.count), options: [])
     }
+    
     
     func getCenterPoint(mins: vector_float3, maxs: vector_float3)->float3{
         let sum = mins + maxs
@@ -52,7 +42,6 @@ class BoundingSphere: Node {
         result = simd_max(result, maxs.z)
         return result
     }
-
 }
 
 extension BoundingSphere: Renderable{
@@ -61,7 +50,16 @@ extension BoundingSphere: Renderable{
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 2)
         renderCommandEncoder.setFrontFacing(.counterClockwise)
         renderCommandEncoder.setVertexBuffer(vertexBuffer, offset:0, index:0)
-        renderCommandEncoder.drawPrimitives(type: .lineStrip, vertexStart: 0, vertexCount: vertices.count)
+        if(indices.count > 0){
+            renderCommandEncoder.drawIndexedPrimitives(type: .lineStrip,
+                                                       indexCount: indices.count,
+                                                       indexType: .uint32,
+                                                       indexBuffer: indexBuffer,
+                                                       indexBufferOffset: 0)
+        }else{
+            renderCommandEncoder.drawPrimitives(type: .lineStrip, vertexStart: 0, vertexCount: vertices.count)
+        }
+
     }
     
     var renderPipelineState: MTLRenderPipelineState! {
@@ -71,6 +69,16 @@ extension BoundingSphere: Renderable{
     func draw(_ renderCommandEncoder: MTLRenderCommandEncoder, modelConstants: ModelConstants) {
         self.modelConstants = modelConstants
         self.draw(renderCommandEncoder)
-        
     }
 }
+
+
+
+
+
+
+
+
+
+
+
