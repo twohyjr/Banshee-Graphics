@@ -59,17 +59,24 @@ extension Primitive: Renderable{
         renderCommandEncoder.setFrontFacing(.counterClockwise)
         renderCommandEncoder.setVertexBuffer(meshData.vertexBuffer, offset:0, index:0)
         
-        if(meshData.indexCount > 0){
-            renderCommandEncoder.drawIndexedPrimitives(type: meshData.primitiveType,
-                                                       indexCount: meshData.indexCount,
-                                                       indexType: meshData.indexType,
-                                                       indexBuffer: meshData.indexBuffer,
-                                                       indexBufferOffset: 0)
-        }else{
-            renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
+        if(Preferences.drawObjects){
+            if(meshData.indexCount > 0){
+                renderCommandEncoder.drawIndexedPrimitives(type: meshData.primitiveType,
+                                                           indexCount: meshData.indexCount,
+                                                           indexType: meshData.indexType,
+                                                           indexBuffer: meshData.indexBuffer,
+                                                           indexBufferOffset: 0)
+            }else{
+                renderCommandEncoder.drawPrimitives(type: meshData.primitiveType, vertexStart: 0, vertexCount: meshData.vertexCount)
+            }
         }
-        
-        boundingSphere?.draw(renderCommandEncoder, modelConstants: modelConstants)
+
+        if(Preferences.drawBoundingBox){
+            boundingBox?.draw(renderCommandEncoder, modelConstants: modelConstants)
+        }
+        if(Preferences.drawBoundingSphere){
+            boundingSphere?.draw(renderCommandEncoder, modelConstants: modelConstants)
+        }
     }
 }
 
