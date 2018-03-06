@@ -3,7 +3,7 @@ import MetalKit
 class Sun: Primitive {
     
     init(){
-        super.init(baseMeshType: .SPHERE_APPLE)
+        super.init(baseMeshType: .CONE_APPLE)
         scale = float3(0.95)
         
     }
@@ -24,6 +24,7 @@ class Sun: Primitive {
         if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Down)){
             rotation.x -= 0.05
         }
+        super.tick()
     }
 }
 

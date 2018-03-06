@@ -23,6 +23,7 @@ class FruitStand: Primitive {
         if(Keyboard.isKeyPressed(key: KEY_CODES.Key_Arrow_Down)){
             rotation.x -= 0.05
         }
+        super.tick()
     }
     
 }

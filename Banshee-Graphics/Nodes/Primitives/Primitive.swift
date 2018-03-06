@@ -37,6 +37,12 @@ class Primitive : Node{
         modelConstants.model_matrix = modelMatrix
         renderCommandEncoder.setVertexBytes(&modelConstants, length: ModelConstants.stride(1), index: 2)
     }
+    
+    override func tick() {
+        boundingBox?.recalculateBoundingBox(modelConstants.model_matrix)
+        
+        super.tick()
+    }
 }
 
 extension Primitive: Renderable{
