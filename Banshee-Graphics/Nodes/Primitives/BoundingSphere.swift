@@ -7,10 +7,19 @@ class BoundingSphere: Node {
     var vertexBuffer: MTLBuffer!
     var indexBuffer: MTLBuffer!
     var radius: Float = 0
+    var mins: float3!
+    var maxs: float3!
+    var centerPoint: float3{
+        var center = getCenterPoint(mins: mins, maxs: maxs)
+        var center4 = matrix_multiply(Camera.viewMatrix, modelConstants.model_matrix) * float4(center.x, center.y, center.z, 1)
+        return float3(center4.x, center4.y, center4.z)
+    }
     //    var color:
     
     init(mins: vector_float3, maxs: vector_float3, color: float3 = float3(1, 0, 0)) {
         super.init()
+        self.mins = mins
+        self.maxs = maxs
         let trianglesPerSection: Int = 100
         radius = getRadius(mins: mins, maxs: maxs)
         for i in (0 ... trianglesPerSection) {
@@ -29,12 +38,12 @@ class BoundingSphere: Node {
     }
     
     
-    func getCenterPoint(mins: vector_float3, maxs: vector_float3)->float3{
+    public func getCenterPoint(mins: vector_float3, maxs: vector_float3)->float3{
         let sum = mins + maxs
         return sum / 2
     }
     
-    func getRadius(mins: vector_float3, maxs: vector_float3)->Float{
+    public func getRadius(mins: vector_float3, maxs: vector_float3)->Float{
         var result:Float = simd_max(mins.x, maxs.x)
         result = simd_max(result, mins.y)
         result = simd_max(result, mins.z)
@@ -63,7 +72,7 @@ extension BoundingSphere: Renderable{
     }
     
     var renderPipelineState: MTLRenderPipelineState! {
-        return RenderPipelineStateLibrary.pipelineState(.INSTANCED_BASIC)
+        return RenderPipelineStateLibrary.pipelineState(.BOUNDING)
     }
     
     func draw(_ renderCommandEncoder: MTLRenderCommandEncoder, modelConstants: ModelConstants) {

@@ -8,6 +8,7 @@ class BoundingBox: Node {
     var maxs: float3!
     var color: float3!
     var indices: [UInt32] = [2,0,4,6,2,3,7,6,7,5,4,5,1,0,1,3]
+    var lastModelViewMatrix = matrix_identity_float4x4
 //    var color:
     
     init(mins: vector_float3, maxs: vector_float3, color: float3 = float3(1, 0, 0)) {
@@ -20,15 +21,8 @@ class BoundingBox: Node {
         recalculateBoundingBox(matrix_identity_float4x4)
     }
     
+    var oldModelMatrix = matrix_identity_float4x4
     public func recalculateBoundingBox(_ modelMatrix: matrix_float4x4){
-        //TODO: Use the following values to recalculate each vertex
-        let viewMatrix = Camera.viewMatrix
-        let bottomLeft = float3(1)
-        let topRight = float3(0)
-        let backLeft = float3(0)
-
-        
-        
         let v1 = Vertex(position: float3(mins.x, maxs.y, mins.z), color: color, normal: float3(0), textureCoordinate: float2(0)) //Top Left Back
         let v2 = Vertex(position: float3(mins.x, maxs.y, maxs.z), color: color, normal: float3(0), textureCoordinate: float2(0)) //Top Left Front
         let v3 = Vertex(position: float3(maxs.x, maxs.y, mins.z), color: color, normal: float3(0), textureCoordinate: float2(0)) //Top Right Back
@@ -41,6 +35,8 @@ class BoundingBox: Node {
         
         let vertices = [v1, v2, v3, v4, v5, v6, v7, v8]
         vertexBuffer.contents().copyBytes(from: vertices, count: Vertex.stride(8))
+        
+        oldModelMatrix = modelMatrix
     }
 }
 
@@ -58,7 +54,7 @@ extension BoundingBox: Renderable{
     }
     
     var renderPipelineState: MTLRenderPipelineState! {
-        return RenderPipelineStateLibrary.pipelineState(.INSTANCED_BASIC)
+        return RenderPipelineStateLibrary.pipelineState(.BOUNDING)
     }
     
     func draw(_ renderCommandEncoder: MTLRenderCommandEncoder, modelConstants: ModelConstants) {

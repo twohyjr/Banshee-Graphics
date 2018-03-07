@@ -24,6 +24,7 @@ struct Vertex: sizeable {
 
 struct ModelConstants: sizeable{
     var model_matrix: matrix_float4x4 = matrix_identity_float4x4
+    var materialColor: float3 = float3(0.25)
 }
 
 struct SceneConstants: sizeable{

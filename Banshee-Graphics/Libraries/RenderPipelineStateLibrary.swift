@@ -5,6 +5,7 @@ enum RenderPipelineStateType{
     case TEXTURED
     case INSTANCED_TEXTURED
     case INSTANCED_BASIC
+    case BOUNDING
 }
 
 class RenderPipelineStateLibrary{
@@ -20,6 +21,7 @@ class RenderPipelineStateLibrary{
         renderPipelineStates.updateValue(Textured_RenderPipelineState(), forKey: .TEXTURED)
         renderPipelineStates.updateValue(InstancedBasic_RenderPipelineState(), forKey: .INSTANCED_BASIC)
         renderPipelineStates.updateValue(InstancedTextured_RenderPipelineState(), forKey: .INSTANCED_TEXTURED)
+        renderPipelineStates.updateValue(Bounding_RenderPipelineState(), forKey: .BOUNDING)
     }
     
     public static func pipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
@@ -114,6 +116,26 @@ class InstancedTextured_RenderPipelineState: RenderPipelineState{
         renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.MainDepthStencilFormat
         renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Instanced_Vertex)
         renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Textured_Fragment)
+        renderPipelineDescriptor.vertexDescriptor = BaseVertexDescriptorLibrary.vertexDescriptor(.BASIC)
+        
+        return renderPipelineDescriptor
+    }
+    
+    init() {
+        renderPipelineState = buildRenderPipelineState(renderPipelineDescriptor)
+    }
+}
+
+class Bounding_RenderPipelineState: RenderPipelineState{
+    var name: String = "Instance Textured Render Pipeline State"
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor{
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.MainPixelFormat
+        renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.MainDepthStencilFormat
+        renderPipelineDescriptor.vertexFunction = ShaderFunctionLibrary.shaderFunction(.Bounding_Vertex)
+        renderPipelineDescriptor.fragmentFunction = ShaderFunctionLibrary.shaderFunction(.Basic_Fragment)
         renderPipelineDescriptor.vertexDescriptor = BaseVertexDescriptorLibrary.vertexDescriptor(.BASIC)
         
         return renderPipelineDescriptor

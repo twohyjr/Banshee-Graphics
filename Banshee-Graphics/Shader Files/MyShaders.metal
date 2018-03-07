@@ -16,6 +16,7 @@ struct VertexOut{
 
 struct ModelConstants{
     float4x4 modelMatrix;
+    float3 materialColor;
 };
 
 struct SceneConstants{
@@ -33,6 +34,18 @@ vertex VertexOut basic_vertex_shader(const VertexIn vIn [[ stage_in ]],
     VertexOut vOut;
     
     vOut.position = getViewPosition(vIn.position, modelConstants, sceneConstants);
+    vOut.color = float4(modelConstants.materialColor, 1);
+    vOut.textureCoordinate = vIn.textureCoordinate;
+    
+    return vOut;
+}
+
+vertex VertexOut bounding_vertex_shader(const VertexIn vIn [[ stage_in ]],
+                                     constant SceneConstants &sceneConstants [[ buffer(1) ]],
+                                     constant ModelConstants &modelConstants [[ buffer(2) ]]){
+    VertexOut vOut;
+    
+    vOut.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * modelConstants.modelMatrix * float4(vIn.position, 1.0);
     vOut.color = float4(vIn.color,1);
     vOut.textureCoordinate = vIn.textureCoordinate;
     

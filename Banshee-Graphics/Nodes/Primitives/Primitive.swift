@@ -2,6 +2,7 @@ import MetalKit
 
 class Primitive : Node{
     
+    var id: UInt32 = 0
     var meshData: MeshData!
     var texture: MTLTexture!
     var modelConstants = ModelConstants()
@@ -21,8 +22,10 @@ class Primitive : Node{
         return _boundingBox
     }
     
-    init(baseMeshType: MeshDataTypes, textureName: String = String.Empty){
+    init(baseMeshType: MeshDataTypes, position: float3 = float3(0), textureName: String = String.Empty){
         super.init()
+        self.position = position
+        id = arc4random_uniform(1000000000)
         setTexture(textureName)
         meshData = MeshLibrary.mesh(baseMeshType)
     }
@@ -39,7 +42,9 @@ class Primitive : Node{
     }
     
     override func tick() {
-        boundingBox?.recalculateBoundingBox(modelConstants.model_matrix)
+        if(Preferences.drawBoundingBox){
+            boundingBox?.recalculateBoundingBox(modelConstants.model_matrix)
+        }
         
         super.tick()
     }
@@ -78,7 +83,7 @@ extension Primitive: Renderable{
         }
 
         if(Preferences.drawBoundingBox){
-            boundingBox?.draw(renderCommandEncoder, modelConstants: modelConstants)
+            boundingBox?.draw(renderCommandEncoder)
         }
         if(Preferences.drawBoundingSphere){
             boundingSphere?.draw(renderCommandEncoder, modelConstants: modelConstants)

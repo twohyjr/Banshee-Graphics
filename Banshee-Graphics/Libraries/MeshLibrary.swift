@@ -43,6 +43,7 @@ class MeshLibrary {
         addAppleDesignedMesh(appleDesignedMeshType: .CONE, meshDataType: .CONE_APPLE)
         addAppleDesignedMesh(appleDesignedMeshType: .SPHERE, meshDataType: .SPHERE_APPLE)
         addAppleDesignedMesh(appleDesignedMeshType: .ICOSAHEDRON, meshDataType: .ICOSAHEDRON_APPLE)
+        addAppleDesignedMesh(appleDesignedMeshType: .HEMISPHERE, meshDataType: .HEMISPHERE_APPLE)
         addAppleDesignedMesh(appleDesignedMeshType: .CAPSULE, meshDataType: .CAPSULE_APPLE)
         addAppleDesignedMesh(appleDesignedMeshType: .CYLINDER, meshDataType: .CYLINDER_APPLE)
         addAppleDesignedMesh(appleDesignedMeshType: .CUBE, meshDataType: .CUBE_APPLE)

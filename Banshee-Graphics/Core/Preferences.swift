@@ -18,9 +18,9 @@ class Preferences{
     public static var camera_fov: Float = 45
     public static var camera_aspectRatio: Float = 1
     public static var camera_nearZ: Float = 0.1
-    public static var camera_farZ: Float = 1000
+    public static var camera_farZ: Float = 50
     
     public static var drawObjects: Bool = true
     public static var drawBoundingSphere: Bool = true
-    public static var drawBoundingBox: Bool = true
+    public static var drawBoundingBox: Bool = false
 }
